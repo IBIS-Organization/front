@@ -1,0 +1,36 @@
+<div class="container-fluid row recuperar-container">
+    <!-- Columna izquierda con la imagen del hotel -->
+    <div class="col-md-6 left-side d-none d-md-flex">
+        <img src="https://ibis.hotels-in-trujillo.com/data/Images/OriginalPhoto/9885/988520/988520851/image-trujillo-ibis-77.JPEG" alt="Imagen Hotel Ibis" class="hotel-image">
+    </div>
+
+    <!-- Columna derecha con el formulario de recuperación de contraseña -->
+    <div class="col-md-6 right-side">
+        <!-- Header con el logo del hotel -->
+        <div class="header text-center">
+            <img src="LogoIBIS.png" alt="Hotel Ibis Logo" class="logo">
+        </div>
+
+        <!-- Formulario de recuperación -->
+        <div class="recuperar-form">
+            <h2>Recuperar Contraseña</h2>
+            <p>¡Te has olvidado tu contraseña! Tienes dos opciones para generar una nueva contraseña.</p>
+            <div class="opciones-recuperacion">
+                <label><input type="radio" name="recuperar" checked> Enviar código por SMS</label>
+                <label><input type="radio" name="recuperar"> Enviar código por correo electrónico</label>
+            </div>
+            <div class="form-group">
+                <label for="codigo">Introducir código enviado a SMS/correo electrónico</label>
+                <div class="codigo-inputs">
+                    <input type="text" maxlength="1">
+                    <input type="text" maxlength="1">
+                    <input type="text" maxlength="1">
+                    <input type="text" maxlength="1">
+                    <input type="text" maxlength="1">
+                    <input type="text" maxlength="1">
+                </div>
+            </div>
+            <button type="submit" class="enviar-btn">Enviar</button>
+        </div>
+    </div>
+</div>
