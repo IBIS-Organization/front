@@ -7,7 +7,7 @@ import { HabitacionesComponent } from './habitaciones/habitaciones.component'; /
 
 export const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
-  { path: 'iniciar-sesion', component: IniciarSesionComponent },  // Ruta para el componente de iniciar sesión
+  { path: 'iniciarSesion', component: IniciarSesionComponent },  // Ruta para el componente de iniciar sesión
   { path: 'recuperar-contrasena', component: RecuperarContrasenaComponent },  // Ruta para el componente de recuperar contraseña
   { path: 'registro-usuario', component: RegistroUsuarioComponent },
   { path: 'habitaciones', component: HabitacionesComponent }

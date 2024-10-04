@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,4 +10,13 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
+  constructor(private router: Router){}
+
+  IniciarSesion(){
+    this.router.navigate(['/iniciarSesion']);
+  }
+
+  Registrarse(){
+    this.router.navigate(['/registro-usuario'])
+  }
 }
