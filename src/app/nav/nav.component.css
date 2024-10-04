@@ -1,130 +1,140 @@
-.header-background {
-    background-image: url('https://www.atrapalo.pe/hoteles/picture/l/26298/6/7/518441700.jpg'); /* Cambia por la ruta o URL de tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-bottom: 20px;
-    height: 600px; /* Ajuste para hacer la imagen más alta */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Coloca la sección de reservas más abajo */
+.navbar {
+  background-image: url(https://www.atrapalo.pe/hoteles/picture/l/26298/6/7/518441700.jpg);
+  background-size: cover; /* La imagen cubre todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  border-bottom: 1px solid lightgray;
+  height: 540px; /* Cambia la altura según lo que desees */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative; /* Para el correcto funcionamiento del z-index */
+  z-index: 1; /* Imagen de fondo estará en la capa más baja */
 }
 
-/* El resto de los estilos del header permanecen igual */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    color: white;
-}
 
-.logo-container {
-    display: flex;
-    align-items: center;
-}
+.nav-link {
+  font-weight: bold;
+  color: black;
+  margin: 0 15px; /* Añade un margen lateral para separar los enlaces */
 
-.logo {
-    height: 50px;
-}
+  &.active {
+    border-bottom: 2px solid red;
+  }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: black; /* Cambiamos el color a negro para que resalten sobre el fondo */
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.nav-links span {
+  &:hover {
     color: red;
-    font-size: 18px;
+  }
 }
 
-.actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.btn-outline-danger {
+  border-color: red;
+  color: red;
 }
 
-.actions .shopping-cart {
-    color: white;
-    font-size: 24px;
+.btn-danger {
+  background-color: red;
+}
+
+.search-container {
+  background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente para destacar */
+  border-radius: 10px; /* Bordes redondeados */
+  position: absolute; /* Posicionamos sobre otros elementos */
+  top: 480px; /* Ajusta este valor para la altura */
+  left: 50%; /* Centra el contenedor horizontalmente */
+  transform: translateX(-50%); /* Compensa el desplazamiento de left: 50% para un centrado perfecto */
+  padding: 20px;
+  z-index: 10; /* Asegura que esté delante de la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  width: 190%; /* Ajusta este valor para hacerlo más ancho */
+  max-width: 1400px; /* Ancho máximo para evitar que se expanda demasiado en pantallas grandes */
+}
+
+.search-container h2 {
+  text-align: center; /* Centra el título dentro del contenedor */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  font-size: 1.5rem; /* Ajusta el tamaño del texto */
+  color: #000; /* Color del título */
+}
+
+
+  .form-label {
+    font-weight: bold;
+    color: black;
+  }
+
+  .btn-danger {
+    background-color: red;
+    border: none;
+  }
+
+
+
+h2 {
+  color: #c20e1a;
+}
+
+.form-group {
+  margin-right: 10px;
+}
+
+button {
+  min-width: 120px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
 }
 
 .login-btn, .register-btn {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.login-btn:hover, .register-btn:hover {
-    background-color: darkred;
+.campo {
+  flex: 1 1 150px;
+  margin: 10px;
 }
 
-.register-btn {
-    margin-left: 10px;
+button {
+  background-color: #ff0000;
+  color: rgb(6, 6, 6);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-/* Estilos para la sección gris debajo del header */
-.reservation-section {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    margin-top: 40px; /* Aumenta la distancia entre el header y la sección de reservas */
-    border-top: 1px solid #ddd;
-    width: 90%; /* Ajusta el ancho para que no ocupe toda la pantalla */
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
+button:hover {
+  background-color: #e60000;
 }
 
-.reservation-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 10px;
-}
-
-.reservation-item label {
-    font-weight: bold;
-    font-size: 12px;
-    margin-bottom: 5px;
-}
-
-.reservation-item input,
-.reservation-item select {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 180px;
-    text-align: center;
-}
-
-.consult-btn {
-    background-color: red;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.consult-btn:hover {
-    background-color: darkred;
-}
