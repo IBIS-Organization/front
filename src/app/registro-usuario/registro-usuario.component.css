@@ -1,0 +1,194 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Left Side - Imagen del Establecimiento */
+.left-side {
+    width: 50%;
+}
+
+.left-side .establishment-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right Side - Formulario de Registro */
+.right-side {
+    width: 50%;
+    background-color: #f7f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.header .logo {
+    width: 120px;
+}
+
+.header h2 {
+    text-align: center;
+    font-size: 39px;
+    color: #141850;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #141850;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 2px solid #ff7f00;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-group input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.forgot-password {
+    text-align: right;
+    color: #141850;
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+.login-btn {
+    padding: 12px;
+    background-color: #ff7f00;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #e56200;
+}
+
+.divider {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.divider span {
+    font-size: 14px;
+    color: #141850;
+}
+
+.google-btn, .facebook-btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #141850;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.google-btn {
+    background-color: white;
+    color: #141850;
+}
+
+.facebook-btn {
+    background-color: white;
+    color: #141850;
+}
+
+.google-btn:hover, .facebook-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.register-text {
+    font-size: 14px;
+    color: #141850;
+    margin-bottom: 20px;
+}
+
+.register-text a {
+    color: #ff7f00;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes para evitar que el footer se salga del fondo */
+.footer {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .left-side {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .right-side {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .right-side {
+        padding: 10px;
+    }
+
+    .login-form {
+        width: 90%;
+    }
+
+    .google-btn, .facebook-btn {
+        width: 90%;
+    }
+}
