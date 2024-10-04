@@ -1,0 +1,130 @@
+.header-background {
+    background-image: url('https://www.atrapalo.pe/hoteles/picture/l/26298/6/7/518441700.jpg'); /* Cambia por la ruta o URL de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 20px;
+    height: 600px; /* Ajuste para hacer la imagen más alta */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Coloca la sección de reservas más abajo */
+}
+
+/* El resto de los estilos del header permanecen igual */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black; /* Cambiamos el color a negro para que resalten sobre el fondo */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-links span {
+    color: red;
+    font-size: 18px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.actions .shopping-cart {
+    color: white;
+    font-size: 24px;
+}
+
+.login-btn, .register-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.login-btn:hover, .register-btn:hover {
+    background-color: darkred;
+}
+
+.register-btn {
+    margin-left: 10px;
+}
+
+/* Estilos para la sección gris debajo del header */
+.reservation-section {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 40px; /* Aumenta la distancia entre el header y la sección de reservas */
+    border-top: 1px solid #ddd;
+    width: 90%; /* Ajusta el ancho para que no ocupe toda la pantalla */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.reservation-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.reservation-item label {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.reservation-item input,
+.reservation-item select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 180px;
+    text-align: center;
+}
+
+.consult-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.consult-btn:hover {
+    background-color: darkred;
+}
