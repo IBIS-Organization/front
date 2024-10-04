@@ -15,7 +15,7 @@ html, body {
 
 /* Left Side - Establishment Image */
 .left-side {
-    width: 50%;
+    height: 100%;
 }
 
 .left-side .establishment-image {
@@ -78,7 +78,7 @@ html, body {
 
 .form-group input {
     padding: 10px;
-    border: 2px solid #ff7f00;
+    border: 2px solid #e92626;
     border-radius: 30px;
     font-size: 16px;
     outline: none;
@@ -93,7 +93,7 @@ html, body {
 
 .login-btn {
     padding: 12px;
-    background-color: #ff7f00;
+    background-color: #e92626;
     color: white;
     border: none;
     border-radius: 30px;
@@ -103,7 +103,7 @@ html, body {
 }
 
 .login-btn:hover {
-    background-color: #e56200;
+    background-color: #d81b1b;
 }
 
 .divider {
@@ -147,7 +147,7 @@ html, body {
 }
 
 .register-text a {
-    color: #ff7f00;
+    color: #e92626;
     text-decoration: none;
 }
 
@@ -163,7 +163,7 @@ html, body {
 
     .left-side {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .right-side {
@@ -183,5 +183,50 @@ html, body {
 
     .google-btn, .facebook-btn {
         width: 90%;
+    }
+
+    .header .logo {
+        width: 100px;
+    }
+
+    .login-form h2 {
+        font-size: 28px;
+    }
+
+    .form-group input {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .right-side {
+        padding: 10px;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+
+    .google-btn, .facebook-btn {
+        width: 100%;
+    }
+
+    .login-form h2 {
+        font-size: 24px;
+    }
+
+    .form-group input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .header .logo {
+        width: 80px;
+    }
+
+    .login-btn {
+        padding: 10px;
+        font-size: 14px;
     }
 }
