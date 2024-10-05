@@ -1,0 +1,86 @@
+.tarjeta {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 15px;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.card-info {
+  padding: 15px;
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .capacity,
+  .bed-info,
+  .price,
+  .taxes {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  .price {
+    color: #e63946;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .taxes {
+    font-size: 12px;
+    color: #999;
+  }
+}
+
+.btn-reservar {
+  background-color: #e63946;
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #cc2f34;
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100%;
+  filter: invert(1); /* Para que las flechas sean blancas sobre fondo oscuro */
+}
+.tarjeta-no-disponible {
+  background-color: #e0e0e0; /* Color plomo claro */
+  opacity: 0.6; /* Reduce la opacidad */
+  pointer-events: none; /* Evita cualquier interacción con el contenido */
+  
+  .btn-reservar {
+    background-color: #b0b0b0; /* Cambia el color del botón a uno más apagado */
+    border-color: #b0b0b0;
+    cursor: not-allowed; /* Cambia el cursor a "no permitido" */
+  }
+  
+  img {
+    filter: grayscale(100%); /* Aplica un filtro en escala de grises a la imagen */
+  }
+}
+

@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <!-- Header con logo y menú de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="LogoIBIS.png" alt="Hotel Ibis" width="100" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/habitaciones">Habitaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ubicación</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Preguntas frecuentes</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <button class="btn btn-danger me-3" (click)="IniciarSesion()">Iniciar sesión</button>
+          <a routerLink="/registro-usuario"><button class="btn btn-danger" >Registrarse</button></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+ 
+    <div class="search-container bg-light p-4">
+      <div class="row">
+        <div class="col-md-2">
+          <label for="fechaReserva" class="form-label">DÍAS DE RESERVA</label>
+          <input type="date" class="form-control" id="fechaReserva" placeholder="Dom 20 oct - Lun 21 oct">
+        </div>
+        <div class="col-md-2">
+          <label for="habitacion" class="form-label">HABITACIÓN</label>
+          <select class="form-select" id="habitacion">
+            <option selected>Seleccione...</option>
+            <option value="1">Simple</option>
+            <option value="1">Doble</option>
+            <option value="2">Matrimoniales</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="cantidad" class="form-label">¿CUÁNTAS?</label>
+          <select class="form-select" id="cantidad">
+            <option selected>1 Habitación</option>
+            <option value="2">2 Habitaciones</option>
+            <option value="3">3 Habitaciones</option>
+            <option value="4">4 Habitaciones</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="huespedes" class="form-label">HUÉSPEDES</label>
+          <select class="form-select" id="huespedes">
+            <option selected>1 Persona</option>
+            <option value="2">2 Personas</option>
+            <option value="3">3 Personas</option>
+            <option value="4">4 Personas</option>
+            <option value="5">5 Personas</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="sede" class="form-label">SEDE</label>
+          <select class="form-select" id="sede">
+            <option selected>Seleccione...</option>
+            <option value="1">Trujillo</option>
+            <option value="2">Lima</option>
+          </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+          <button class="btn btn-danger w-100">CONSULTAR</button>
+        </div>
+      </div>
+    </div>
+    
