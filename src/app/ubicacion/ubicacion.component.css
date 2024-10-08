@@ -1,0 +1,102 @@
+/* Estilo general para centrar el contenido y limitar el ancho */
+.container-limited {
+    max-width: 1200px; /* Ajusta este valor para limitar el ancho de las secciones */
+    margin: 0 auto; /* Centra el contenido */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Estilo para la barra de navegación */
+  .navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  /* Ajuste del logo */
+  .navbar-brand img {
+    height: auto;
+    max-height: 60px;
+  }
+  
+  /* Estilo para los enlaces de navegación */
+  .navbar-nav .nav-item .nav-link {
+    margin-right: 20px;
+    padding: 10px 0;
+  }
+  
+  /* Ajustes generales */
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Estilo para las secciones */
+  section {
+    margin-bottom: 60px;
+  }
+  
+  #map {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Sección de llamada a la acción */
+  .btn-lg {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+  
+  /* Efecto hover para botones */
+  .btn:hover {
+    background-color: #c0392b;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Estilos del carrusel para que las imágenes se vean completas */
+  .carousel-inner {
+    height: 500px;
+  }
+  
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-item {
+    height: 100%;
+  }
+  
+  /* Galería de imágenes */
+  .carousel-inner img {
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  /* Ajuste de tipografía y espaciado */
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #555;
+  }
+  
+  /* Ajuste del padding del footer */
+  footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
