@@ -47,7 +47,7 @@ html, body {
     width: 120px;
 }
 
-/* Formulario de recuperación de contraseña */
+/* Formulario de nueva contraseña */
 .recuperar-form {
     text-align: center;
     max-width: 400px;
@@ -66,38 +66,26 @@ html, body {
     margin-bottom: 20px;
 }
 
-/* Opciones de recuperación */
-.opciones-recuperacion {
-    display: flex;
-    justify-content: space-around;
+.form-group {
     margin-bottom: 20px;
 }
 
-.opciones-recuperacion label {
-    font-size: 14px;
+.form-group label {
+    font-size: 16px;
     color: #141850;
+    display: block;
+    margin-bottom: 8px;
 }
 
-.opciones-recuperacion input[type="radio"] {
-    margin-right: 10px;
-}
-
-/* Input de código de recuperación */
-.codigo-inputs {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.codigo-inputs input {
-
-    font-size: 24px;
-    text-align: center;
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
     border: 2px solid #e92626;
     border-radius: 10px;
 }
 
-/* Botón de enviar */
+/* Botón de confirmar */
 .enviar-btn {
     padding: 12px 30px;
     background-color: #e92626;
@@ -147,10 +135,9 @@ html, body {
         font-size: 14px;
     }
 
-    .codigo-inputs input {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
+    .form-group input {
+        font-size: 14px;
+        padding: 8px;
     }
 }
 
@@ -167,14 +154,13 @@ html, body {
         font-size: 24px;
     }
 
-    .codigo-inputs input {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
+    .form-group input {
+        font-size: 12px;
+        padding: 6px;
     }
 
     .enviar-btn {
         padding: 10px 20px;
         font-size: 14px;
-    }
+    }
 }

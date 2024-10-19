@@ -1,0 +1,55 @@
+<div class="container-fluid row recuperar-container">
+    <!-- Columna izquierda con la imagen del hotel -->
+    <div class="col-md-6 left-side d-none d-md-flex">
+        <img src="https://ibis.hotels-in-trujillo.com/data/Images/OriginalPhoto/9885/988520/988520851/image-trujillo-ibis-77.JPEG" alt="Imagen Hotel Ibis" class="hotel-image">
+    </div>
+
+    <!-- Columna derecha con el formulario de nueva contraseña -->
+    <div class="col-md-6 right-side">
+        <!-- Header con el logo del hotel -->
+        <div class="header text-center">
+            <img src="LogoIBIS.png" alt="Hotel Ibis Logo" class="logo">
+        </div>
+
+        <!-- Formulario para nueva contraseña -->
+        <form [formGroup]="resetPasswordForm" (ngSubmit)="onSubmit()">
+        <div class="recuperar-form">
+            <h2>Recuperar Contraseña</h2>
+            <p>Por favor ingresa tu nueva contraseña y confírmala para continuar.</p>
+            
+            <div class="form-group">
+                <label for="password">Ingrese Nueva Contraseña</label>
+                <input
+                formControlName="password"
+                type="password"
+                id="password"
+                class="form-control"
+                placeholder="Nueva Contraseña">
+
+                <div *ngIf="resetPasswordForm.get('password')?.invalid && resetPasswordForm.get('password')?.touched">
+                    <small class="text-danger">La contraseña debe tener al menos 6 caracteres.</small>
+                  </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Contraseña</label>
+                <input
+                formControlName="confirmPassword"
+                type="password"
+                id="confirmPassword"
+                id="new-password"
+                class="form-control"
+                placeholder="Confirmar Contraseña">
+                <div *ngIf="resetPasswordForm.errors?.['notMatching'] && resetPasswordForm.get('confirmPassword')?.touched">
+                    <small class="text-danger">Las contraseñas no coinciden.</small>
+                  </div>
+            </div>
+
+            <button
+            type="submit"
+            class="enviar-btn">Confirmar</button>
+        </div>
+    </form>
+    <p *ngIf="message">{{ message }}</p>
+    </div>
+</div>

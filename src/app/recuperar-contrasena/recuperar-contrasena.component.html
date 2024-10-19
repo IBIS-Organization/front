@@ -12,25 +12,27 @@
         </div>
 
         <!-- Formulario de recuperación -->
+         <form [formGroup]="forgotPasswordForm" (ngSubmit)="onSubmit()">
         <div class="recuperar-form">
             <h2>Recuperar Contraseña</h2>
-            <p>¡Te has olvidado tu contraseña! Tienes dos opciones para generar una nueva contraseña.</p>
-            <div class="opciones-recuperacion">
-                <label><input type="radio" name="recuperar" checked> Enviar código por SMS</label>
-                <label><input type="radio" name="recuperar"> Enviar código por correo electrónico</label>
-            </div>
+            <p>¡Te has olvidado tu contraseña!.</p>
             <div class="form-group">
-                <label for="codigo">Introducir código enviado a SMS/correo electrónico</label>
+                <label for="codigo">Introduce tu correo electrónico</label>
                 <div class="codigo-inputs">
-                    <input type="text" maxlength="1">
-                    <input type="text" maxlength="1">
-                    <input type="text" maxlength="1">
-                    <input type="text" maxlength="1">
-                    <input type="text" maxlength="1">
-                    <input type="text" maxlength="1">
+                    <input
+                    placeholder="Correo Electrónico"
+                    id="email" 
+                    type="email"
+                    formControlName="email">
+                    <div *ngIf="forgotPasswordForm.get('email')?.invalid && forgotPasswordForm.get('email')?.touched">
+                        <small class="text-danger">El correo es obligatorio y debe ser válido.</small>
+                      </div>
                 </div>
             </div>
-            <button type="submit" class="enviar-btn">Enviar</button>
+            <button [disabled]="forgotPasswordForm.invalid" type="submit" class="enviar-btn">Enviar</button>
         </div>
+    </form>
+    <div *ngIf="loading">Un momento, estamos procesando tu solicitud...</div>
+    <div *ngIf="message">{{ message }}</div>
     </div>
 </div>
