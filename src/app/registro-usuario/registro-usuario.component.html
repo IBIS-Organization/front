@@ -1,94 +1,94 @@
-<div class="login-container">
-    <div class="left-side">
-      <img src="https://cdn.discordapp.com/attachments/1168351427727470592/1291058653083992074/image.png?ex=67000911&is=66feb791&hm=6c42f0fe87406aa1d48723e79d49af53433307bf5675c8d322335fd580b35e21&" alt="Hotel Ibis" class="establishment-image">
-    </div>
-  
-    <div class="right-side">
-      <div class="header">
-        <img src="https://cdn.discordapp.com/attachments/1168351427727470592/1291059035314847744/image.png?ex=6700096c&is=66feb7ec&hm=69e35a0e1bc6526cfda1faf222c9ecb3e1aa4ebe83e201a2ccfc8d5760ab3ab9&" alt="Hotel Ibis Logo" class="logo">
-      </div>
-      
-      <form class="inputs-container" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" autocomplete="off">
-        <div class="form-group">
-          <input 
-          class="input" 
-          type="text"
-          id="firstName"
-          name="firstName"
-          ngModel
-          required
-          #firstName="ngModel"
-          [ngClass]="{ 'is-invalid': firstName.invalid && firstName.touched }"
-          placeholder="Nombre">
-          <div *ngIf="firstName.invalid && firstName.touched" class="invalid-feedback">
-            El nombre es requerido.
-          </div>
-        </div>
-        
-
-        <div class="form-group">
-          <input 
-          class="input" 
-          type="text"
-          id="lastName"
-          name="lastName"
-          ngModel
-          required
-          #lastName="ngModel"
-          [ngClass]="{ 'is-invalid': lastName.invalid && lastName.touched }"
-          placeholder="Apellido">
-          <div *ngIf="firstName.invalid && firstName.touched" class="invalid-feedback">
-            El nombre es requerido.
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <input 
-          class="input" 
-          type="email"
-          id="email"
-          name="email"
-          ngModel
-          required
-          email
-          #email="ngModel"
-          [ngClass]="{ 'is-invalid': email.invalid && email.touched }"
-          placeholder="Correo electronico">
-          <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
-            Email es requerido y debe ser válido.
-          </div>
-
-        </div>
-
-        <div class="form-group">
-
-          <input 
-          class="input" 
-          type="password"
-          id="password"
-          name="password"
-          ngModel
-          required
-          #password="ngModel"
-          [ngClass]="{ 'is-invalid': password.invalid && password.touched }"
-          placeholder="Contrasena">   
-        <div>
-          <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
-            La contraseña es requerida. Minimo 6 caracteres.
-          </div>
-
-        </div>
-          
-        </div>
-         
-<button class="btn" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
-<div *ngIf="errorMessage" class="error-message">
-  {{ errorMessage }}
-</div>
-<a routerLink="/home"><span class="span">Regresar</span></a>
-</form>
-  
-      <p class="register-text">¿Ya tienes una cuenta? <a routerLink = "/iniciarSesion">Iniciar sesión</a></p>
-    </div>
+<div class="container-fluid row login-container">
+  <!-- Columna izquierda con la imagen del hotel -->
+  <div class="col-md-6 left-side d-none d-md-flex">
+      <img src="registro.png" alt="Hotel Ibis" class="hotel-image">
   </div>
-  
+
+  <!-- Columna derecha con el formulario de registro -->
+  <div class="col-md-6 right-side">
+      <!-- Header con el logo del hotel -->
+      <div class="header text-center">
+          <img src="LogoIBIS.png" alt="Hotel Ibis Logo" class="logo">
+      </div>
+
+      <!-- Formulario de registro -->
+      <form class="register-form" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" autocomplete="off">
+          <h2>Registro de Usuario</h2>
+
+          <div class="form-group mb-3">
+              <input 
+              class="form-control input py-2" 
+              type="text"
+              id="firstName"
+              name="firstName"
+              ngModel
+              required
+              #firstName="ngModel"
+              [ngClass]="{ 'is-invalid': firstName.invalid && firstName.touched }"
+              placeholder="Nombre">
+              <div *ngIf="firstName.invalid && firstName.touched" class="invalid-feedback">
+                  El nombre es requerido.
+              </div>
+          </div>
+
+          <div class="form-group mb-3">
+              <input 
+              class="form-control input py-2" 
+              type="text"
+              id="lastName"
+              name="lastName"
+              ngModel
+              required
+              #lastName="ngModel"
+              [ngClass]="{ 'is-invalid': lastName.invalid && lastName.touched }"
+              placeholder="Apellido">
+              <div *ngIf="lastName.invalid && lastName.touched" class="invalid-feedback">
+                  El apellido es requerido.
+              </div>
+          </div>
+
+          <div class="form-group mb-3">
+              <input 
+              class="form-control input py-2" 
+              type="email"
+              id="email"
+              name="email"
+              ngModel
+              required
+              email
+              #email="ngModel"
+              [ngClass]="{ 'is-invalid': email.invalid && email.touched }"
+              placeholder="Correo electrónico">
+              <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
+                  Email es requerido y debe ser válido.
+              </div>
+          </div>
+
+          <div class="form-group mb-3">
+              <input 
+              class="form-control input py-2" 
+              type="password"
+              id="password"
+              name="password"
+              ngModel
+              required
+              #password="ngModel"
+              [ngClass]="{ 'is-invalid': password.invalid && password.touched }"
+              placeholder="Contraseña">
+              <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
+                  La contraseña es requerida. Mínimo 6 caracteres.
+              </div>
+          </div>
+
+          <button class="btn btn-primary w-100 mb-3" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+
+          <div *ngIf="errorMessage" class="error-message">
+              {{ errorMessage }}
+          </div>
+          <a routerLink="/home" class="nav-link text-center">Regresar</a>
+      </form>
+
+      <!-- Texto para redirigir a iniciar sesión -->
+      <p class="register-text text-center mt-4">¿Ya tienes una cuenta? <a routerLink="/iniciarSesion">Iniciar sesión</a></p>
+  </div>
+</div>

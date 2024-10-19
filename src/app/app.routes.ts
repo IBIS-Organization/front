@@ -5,6 +5,7 @@ import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-c
 import { HabitacionesComponent } from './habitaciones/habitaciones.component'; // Importa el componente Habitaciones
 import { NavComponent } from './nav/nav.component';
 import { ConfirmacionContrasenaComponent } from './confirmacion-contrasena/confirmacion-contrasena.component';
+import { UbicacionComponent } from './ubicacion/ubicacion.component';
 
 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'registro-usuario', component: RegistroUsuarioComponent },
   { path: 'habitaciones', component: HabitacionesComponent },
   { path: 'confirmacion-contrasena', component: ConfirmacionContrasenaComponent},
+  { path: 'ubicacion', component: UbicacionComponent},
   { path: 'principal', component: NavComponent},
   { path: '**', redirectTo: 'principal'}
 ];
