@@ -25,57 +25,91 @@
         </ul>
         <div class="d-flex">
           <button class="btn btn-danger me-3" (click)="IniciarSesion()">Iniciar sesión</button>
-          <a routerLink="/registro-usuario"><button class="btn btn-danger" >Registrarse</button></a>
+          <a routerLink="/registro-usuario"><button class="btn btn-danger">Registrarse</button></a>
         </div>
       </div>
     </div>
   </nav>
  
-    <div class="search-container bg-light p-4">
-      <div class="row">
-        <div class="col-md-2">
-          <label for="fechaReserva" class="form-label">DÍAS DE RESERVA</label>
-          <input type="date" class="form-control" id="fechaReserva" placeholder="Dom 20 oct - Lun 21 oct">
-        </div>
-        <div class="col-md-2">
-          <label for="habitacion" class="form-label">HABITACIÓN</label>
-          <select class="form-select" id="habitacion">
-            <option selected>Seleccione...</option>
-            <option value="1">Simple</option>
-            <option value="1">Doble</option>
-            <option value="2">Matrimoniales</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <label for="cantidad" class="form-label">¿CUÁNTAS?</label>
-          <select class="form-select" id="cantidad">
-            <option selected>1 Habitación</option>
-            <option value="2">2 Habitaciones</option>
-            <option value="3">3 Habitaciones</option>
-            <option value="4">4 Habitaciones</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <label for="huespedes" class="form-label">HUÉSPEDES</label>
-          <select class="form-select" id="huespedes">
-            <option selected>1 Persona</option>
-            <option value="2">2 Personas</option>
-            <option value="3">3 Personas</option>
-            <option value="4">4 Personas</option>
-            <option value="5">5 Personas</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <label for="sede" class="form-label">SEDE</label>
-          <select class="form-select" id="sede">
-            <option selected>Seleccione...</option>
-            <option value="1">Trujillo</option>
-            <option value="2">Lima</option>
-          </select>
-        </div>
-        <div class="col-md-2 d-flex align-items-end">
-          <button class="btn btn-danger w-100">CONSULTAR</button>
-        </div>
+  <div class="search-container bg-light p-4">
+    <div class="row">
+      <div class="col-md-2">
+        <label for="fechaReserva" class="form-label">DÍAS DE RESERVA</label>
+        <input type="date" class="form-control" id="fechaReserva" placeholder="Dom 20 oct - Lun 21 oct">
+      </div>
+      <div class="col-md-2">
+        <label for="habitacion" class="form-label">HABITACIÓN</label>
+        <select class="form-select" id="habitacion">
+          <option selected>Seleccione...</option>
+          <option value="1">Simple</option>
+          <option value="1">Doble</option>
+          <option value="2">Matrimoniales</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="cantidad" class="form-label">¿CUÁNTAS?</label>
+        <select class="form-select" id="cantidad">
+          <option selected>1 Habitación</option>
+          <option value="2">2 Habitaciones</option>
+          <option value="3">3 Habitaciones</option>
+          <option value="4">4 Habitaciones</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="huespedes" class="form-label">HUÉSPEDES</label>
+        <select class="form-select" id="huespedes">
+          <option selected>1 Persona</option>
+          <option value="2">2 Personas</option>
+          <option value="3">3 Personas</option>
+          <option value="4">4 Personas</option>
+          <option value="5">5 Personas</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="sede" class="form-label">SEDE</label>
+        <select class="form-select" id="sede">
+          <option selected>Seleccione...</option>
+          <option value="1">Trujillo</option>
+          <option value="2">Lima</option>
+        </select>
+      </div>
+      <div class="col-md-2 d-flex align-items-end">
+        <button class="btn btn-danger w-100">CONSULTAR</button>
       </div>
     </div>
-    
+  </div>
+
+  <!-- Nueva sección de información -->
+  <div class="info-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <p class="welcome-text">
+            <strong>Bienvenidos a Trujillo</strong><br>
+            En Hotel Ibis, estaremos gustosos de atenderlo, gracias por su preferencia.
+          </p>
+          <img src="mapatrujillo.png" alt="Mapa de Trujillo" class="map-image">
+          <p class="highlight-text">
+            La ciudad de primavera peruana, con rica historia y abundantes atractivos turísticos.
+          </p>
+          <p class="location-text">
+            Trujillo, Trujillo, Perú.
+          </p>
+        </div>
+        <div class="col-md-8">
+          <p class="intro-text">
+            <span class="letter-S">S</span> iéntase como en casa, tómese un delicioso desayuno matutino observando el Morro
+            de Calzada desde nuestro comedor en el 6to piso. Nuestro Hotel de 4 estrellas tiene todo para su feliz estadía, no dude en contactarnos y acudiremos a su solicitud.
+          </p>
+          <div class="hotel-images">
+            <img src="ibis1.png" alt="Hotel Ibis" class="hotel-image">
+            <img src="ibis2.png" alt="Hotel Interior" class="hotel-image">
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>2024 © Hotel Ibis - Trujillo_Grupo5 | Todos los derechos reservados</p>
+      </div>
+    </div>
+  </div>
+</div>

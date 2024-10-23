@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-ubicacion',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './ubicacion.component.html',
   styleUrl: './ubicacion.component.css'
 })
