@@ -4,6 +4,9 @@ import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.componen
 import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-contrasena.component';  // Importa el componente de recuperar contraseña
 import { HabitacionesComponent } from './habitaciones/habitaciones.component'; // Importa el componente Habitaciones
 import { NavComponent } from './nav/nav.component';
+import { ConfirmacionContrasenaComponent } from './confirmacion-contrasena/confirmacion-contrasena.component';
+import { UbicacionComponent } from './ubicacion/ubicacion.component';
+import { FAQComponent } from './faq/faq.component';
 
 
 export const routes: Routes = [
@@ -12,6 +15,9 @@ export const routes: Routes = [
   { path: 'recuperar-contrasena', component: RecuperarContrasenaComponent },  // Ruta para el componente de recuperar contraseña
   { path: 'registro-usuario', component: RegistroUsuarioComponent },
   { path: 'habitaciones', component: HabitacionesComponent },
+  { path: 'confirmacion-contrasena', component: ConfirmacionContrasenaComponent},
+  { path: 'ubicacion', component: UbicacionComponent},
+  { path: 'faq', component: FAQComponent},
   { path: 'principal', component: NavComponent},
   { path: '**', redirectTo: 'principal'}
 ];

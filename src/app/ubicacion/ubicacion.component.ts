@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
+
 @Component({
-  selector: 'app-habitaciones',
+  selector: 'app-ubicacion',
   standalone: true,
   imports: [RouterLink, RouterOutlet],
-  templateUrl: './habitaciones.component.html',
-  styleUrl: './habitaciones.component.css'
+  templateUrl: './ubicacion.component.html',
+  styleUrl: './ubicacion.component.css'
 })
-export class HabitacionesComponent {
+export class UbicacionComponent {
 
 }
