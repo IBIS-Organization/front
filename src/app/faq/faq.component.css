@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.search-bar input {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #555;
+    background-color: #f8d7da;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Item Styles */
+.faq-item {
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Ocultar respuesta inicialmente */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+/* Mostrar respuesta cuando el contenedor está en hover */
+.faq-item:hover .faq-answer {
+    max-height: 100px; /* Ajusta según la longitud de tus respuestas */
+}
+
+footer {
+    background-color: #f8f9fa;
+    color: #555;
+    font-size: 0.9rem;
+}

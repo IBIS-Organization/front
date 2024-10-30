@@ -6,6 +6,7 @@ import { HabitacionesComponent } from './habitaciones/habitaciones.component'; /
 import { NavComponent } from './nav/nav.component';
 import { ConfirmacionContrasenaComponent } from './confirmacion-contrasena/confirmacion-contrasena.component';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
+import { FAQComponent } from './faq/faq.component';
 
 
 export const routes: Routes = [
@@ -16,6 +17,7 @@ export const routes: Routes = [
   { path: 'habitaciones', component: HabitacionesComponent },
   { path: 'confirmacion-contrasena', component: ConfirmacionContrasenaComponent},
   { path: 'ubicacion', component: UbicacionComponent},
+  { path: 'faq', component: FAQComponent},
   { path: 'principal', component: NavComponent},
   { path: '**', redirectTo: 'principal'}
 ];
