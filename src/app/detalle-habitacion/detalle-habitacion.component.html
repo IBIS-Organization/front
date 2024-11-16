@@ -1,1 +1,97 @@
-<p>detalle-habitacion works!</p>
+<!-- Header con navegación y botones -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="LogoIBIS.png" alt="Hotel Ibis" width="100">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" routerLink="/landing-logueado" >Habitaciones</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/servicios">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/ubicacion-logueado">Ubicación</a></li>
+        <li class="nav-item"><a class="nav-link active" routerLink="/faq-logueado" >Preguntas frecuentes</a></li>
+      </ul>
+      <div class="d-flex align-items-center">
+        <a routerLink = "/historial-reservas"class="nav-link perfil-icon">
+          <img src="iconoperfil.png" alt="Perfil" class="icono-perfil">
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal de Procesamiento de Pago -->
+<div class="modal fade" id="paymentModal" tabindex="-1" [ngClass]="{'show': showPaymentModal}"
+     [style.display]="showPaymentModal ? 'block' : 'none'">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center p-4">
+        <div *ngIf="paymentStatus === 'processing'">
+          <div class="spinner-border text-primary mb-3" role="status">
+            <span class="visually-hidden">Procesando pago...</span>
+          </div>
+          <h4>Procesando su pago</h4>
+          <p>Por favor espere un momento...</p>
+        </div>
+        <div *ngIf="paymentStatus === 'success'">
+          <div class="text-success mb-3">
+            <i class="bi bi-check-circle" style="font-size: 3rem;"></i>
+          </div>
+          <h4>¡Pago exitoso!</h4>
+          <p>Su reserva ha sido confirmada</p>
+          <button class="btn btn-primary" (click)="closePaymentModal()">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="showPaymentModal"></div>
+
+<!-- Detalle de Habitación -->
+<section class="detalle-habitacion container my-5">
+  <div class="row">
+    <div *ngIf="Habitacion" class="col-md-7">
+      <h1 class="titulo-habitacion">{{ Habitacion.categoria }}</h1>
+      <div class="habitacion-imagenes">
+        <img [src]="Habitacion.img" alt="Habitación Triple Imagen 1" class="img-fluid">
+      </div>
+      <p class="descripcion">
+        {{ Habitacion.descripcion }}
+      </p>
+      <p class="detalle-hotel">
+        Hotel Romero alberga un restaurante, un bar y un salón compartido. También podrá disfrutar de la terraza con gran vista. El alojamiento cuenta con recepción 24 horas y servicio de cambio de divisa.
+      </p>
+      <h3 class="subtitulo-servicios">Servicios del establecimiento</h3>
+      <div class="servicios-establecimiento">
+        <div class="servicio">COCHERA</div>
+        <div class="servicio">CAFETERÍA</div>
+        <div class="servicio">LAVANDERÍA</div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="reserva-detalle p-4 border rounded">
+        <h3 class="titulo-reserva">SU RESERVA</h3>
+        <form #reservaForm="ngForm" (ngSubmit)="RealizarReserva()">
+          <div class="form-group">
+            <label for="dniCliente" class="form-label">DNI Cliente</label>
+            <input name="dniCliente" type="text" [(ngModel)]="dniCliente" class="form-control" id="dniCliente" required pattern="\d{8}" placeholder="Ingrese su DNI">
+            <small class="form-text text-muted">Ingrese su DNI de 8 dígitos.</small>
+          </div>
+          <div class="form-group">
+            <label for="fechaInicio" class="form-label">INGRESO</label>
+            <input name="fechaInicio" type="date" [min]="ahora" [(ngModel)]="fechaInicio" class="form-control" id="fechaInicio" required>
+          </div>
+          <div class="form-group">
+            <label for="fechaFin" class="form-label">SALIDA</label>
+            <input name="fechaFin" type="date" [min]="deshabilitar" [(ngModel)]="fechaFin" class="form-control" id="fechaFin" required>
+          </div>
+          <p class="precio">PRECIO: <strong>S/ 200</strong> / por habitación</p>
+          <button type="submit" class="btn btn-danger w-100" [disabled]="!reservaForm.form.valid">PAGAR CON PAYPAL </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

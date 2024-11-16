@@ -19,39 +19,54 @@
     color: white;
     margin-right: 10px;
   }
-  
+
   .nav-link {
     font-weight: bold;
     color: rgb(255, 255, 255);
     margin: 0 15px;
   }
-  
+
   .nav-link:hover {
     color: red;
   }
-  
+
   .btn-outline-danger {
     border-color: red;
     color: red;
   }
-  
+
   .btn-danger {
     background-color: red;
     border: none;
   }
-  
+
   .icono-perfil {
     width: 80px;
     height: 85px;
     border-radius: 50%;
     transition: transform 0.3s, filter 0.3s; /* Efecto de transición suave */
   }
-  
+
   .perfil-icon:hover .icono-perfil {
     transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
     filter: brightness(1.2); /* Aumenta el brillo */
   }
-  
+.perfil-icon {
+  margin-bottom: 5px; /* Espacio entre el icono de perfil y "CERRAR SESIÓN" */
+}
+
+.cerrar-sesion {
+  font-size: 0.9em;
+  color: white; /* Ajusta el color si es necesario */
+  margin-top: -5px; /* Ajuste de margen superior si deseas reducir el espacio */
+  text-align: center;
+}
+
+.cerrar-sesion h5 {
+  margin: 0;
+  font-weight: normal; /* Cambia a normal si prefieres que no sea tan destacado */
+}
+
 
   .search-container {
     background-color: rgba(255, 255, 255, 0.95);
@@ -66,7 +81,7 @@
     width: 90%;
     max-width: 1400px;
   }
-  
+
   .info-section {
     background-color: #FFFFFF;
     padding: 40px;
@@ -75,35 +90,35 @@
     position: relative;
     z-index: 1; /* Asegura que esté correctamente posicionado */
   }
-  
+
   .welcome-text {
     font-size: 18px;
     color: #444;
   }
-  
+
   .map-image {
     width: 80%;
     margin: 20px 0;
   }
-  
+
   .highlight-text {
     font-size: 16px;
     color: #b22222;
     font-weight: bold;
   }
-  
+
   .location-text {
     color: #555;
     margin-top: 10px;
   }
-  
+
   .intro-text {
     font-size: 20px;
     line-height: 1.5;
     color: #333;
     text-align: justify;
   }
-  
+
   .letter-S {
     font-size: 70px;
     color: #b22222;
@@ -111,20 +126,20 @@
     float: left;
     margin-right: 10px;
   }
-  
+
   .hotel-images {
     display: flex;
     gap: 20px;
     margin-top: 20px;
     flex-wrap: wrap; /* Ajuste para mejor responsividad */
   }
-  
+
   .hotel-image {
     width: 45%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
+
   .footer {
     margin-top: auto;
     text-align: center;
@@ -133,10 +148,10 @@
     border-top: 1px solid #dd0000;
     padding-top: 10px;
   }
-  
-  
+
+
   /*css habitaciones*/
-  
+
   .tarjeta {
     background-color: #fff;
     border-radius: 10px;
@@ -148,7 +163,7 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
   }
-  
+
   .card-info {
     padding: 15px;
     h2 {
@@ -157,7 +172,7 @@
       color: #333;
       margin-bottom: 10px;
     }
-  
+
     .capacity,
     .bed-info,
     .price,
@@ -166,19 +181,19 @@
       color: #666;
       margin-bottom: 5px;
     }
-  
+
     .price {
       color: #e63946;
       font-size: 16px;
       font-weight: bold;
     }
-  
+
     .taxes {
       font-size: 12px;
       color: #999;
     }
   }
-  
+
   .btn-reservar {
     background-color: #e63946;
     border: none;
@@ -191,7 +206,7 @@
       background-color: #cc2f34;
     }
   }
-  
+
   .carousel-control-prev,
   .carousel-control-next {
     width: 50px;
@@ -201,7 +216,7 @@
     top: 50%;
     transform: translateY(-50%);
   }
-  
+
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     background-size: 100%;
@@ -211,33 +226,32 @@
     background-color: #e0e0e0; /* Color plomo claro */
     opacity: 0.6; /* Reduce la opacidad */
     pointer-events: none; /* Evita cualquier interacción con el contenido */
-    
+
     .btn-reservar {
       background-color: #b0b0b0; /* Cambia el color del botón a uno más apagado */
       border-color: #b0b0b0;
       cursor: not-allowed; /* Cambia el cursor a "no permitido" */
     }
-    
+
     img {
       filter: grayscale(100%); /* Aplica un filtro en escala de grises a la imagen */
     }
   }
-  
-  
-  
-  
-  
+
+
+
+
+
   @media (max-width: 768px) {
     .search-container {
       width: 95%; /* Mejor ajuste para pantallas pequeñas */
     }
-    
+
     .hotel-images {
       flex-direction: column; /* Para apilar las imágenes en dispositivos móviles */
     }
-    
+
     .hotel-image {
       width: 100%;
     }
   }
-  

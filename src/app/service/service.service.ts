@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, map, Observable, tap, throwError } from 'rxjs';
+import {User} from "../model/models.models";
 
 @Injectable({
   providedIn: 'root'
@@ -16,22 +17,36 @@ export class ServiceService {
     const params = new HttpParams()
       .set('email', email)
       .set('password', password);
-    
+
     return this.http.post<any>(`${this.api_url}/login`, null, { params }).pipe(
       tap(response => {
         if (response.token) {
           console.log(response.token);
           this.setToken(response.token);
           callback(response.token);
-        }
-      })
-    );
+        }
+    })
+  );
   }
+  getUserInfo(): Observable<User> {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    return this.http.get<User>(`${this.api_url}/me`, { headers });
+  }
+
+  logout(): void{
+    localStorage.removeItem(this.tokenKey);
+    this.router.navigate(['/iniciarSesion']);
+  }
+
+
+
 
   private setToken(token:string):void{
     localStorage.setItem(this.tokenKey, token);
   }
-  
+
   private getToken(): string | null{
     if(typeof window!== 'undefined'){
       return localStorage.getItem(this.tokenKey);
@@ -39,14 +54,14 @@ export class ServiceService {
       return null;
     }
   }
-  
-  
+
+
   isAuthenticated(): boolean{
     const token = this.getToken();
     if(!token){
       return false;
     }
-  
+
     const payload = JSON.parse(atob(token.split('.')[1]));
     const exp = payload.exp * 1000;
     return Date.now() < exp;
@@ -59,11 +74,11 @@ export class ServiceService {
     return this.http.post(`${this.api_url}/forgot-password`, body.toString(), { headers })
         .pipe(
             map((response: any) => {
-              
+
                 return response;
             }),
             catchError((error: any) => {
-               
+
                 console.error('Error en forgotPassword:', error);
                 return throwError(() => new Error(error.error?.error || 'Hubo un error al enviar el correo. Verifique el correo que sea válido'));
             })

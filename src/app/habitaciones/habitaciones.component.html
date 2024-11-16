@@ -74,20 +74,20 @@
 <div class="container mt-5">
     <div class="row">
         <!-- Sección de Habitaciones -->
-        <div class="col-lg-8">
-            <div class="room-card">
+        <div *ngIf="habitaciones.length > 0" class="col-lg-8">
+            <div *ngFor="let habitacion of habitaciones" class="room-card">
                 <div class="room-image">
-                    <img src="https://via.placeholder.com/800x400" alt="Habitación Matrimonial">
+                    <img [src] ="habitacion.img" alt="Habitación Matrimonial">
                 </div>
                 <div class="room-info">
-                    <h3>Habitación Matrimonial</h3>
-                    <p>Habitación de 16 m². La habitación cuenta con una gran vista y un balcón personal.</p>
-                    <p class="room-price">Desde S/150.00</p>
+                    <h3>{{habitacion.categoria}}</h3>
+                    <p>{{habitacion.descripcion}}</p>
+                    <p class="room-price">Desde S/{{habitacion.precio}}</p>
                     <a href="#" class="book-now">Reservar Ahora</a>
                 </div>
             </div>
 
-            <div class="room-card">
+           <!-- <div class="room-card">
                 <div class="room-image">
                     <img src="https://via.placeholder.com/800x400" alt="Habitación Doble">
                 </div>
@@ -97,11 +97,15 @@
                     <p class="room-price">Desde S/160.00</p>
                     <a href="#" class="book-now">Reservar Ahora</a>
                 </div>
-            </div>
-            
+            </div>-->
+
             <!-- Puedes añadir más tarjetas de habitaciones aquí -->
         </div>
-
+<div *ngIf="habitaciones.length === 0">
+  <p>
+    NO HAY LA HABITACION O LAS HABITACIONES DISPONIBLES
+  </p>
+</div>
         <!-- Panel de Opciones -->
         <div class="col-lg-4">
             <div class="options-panel">
