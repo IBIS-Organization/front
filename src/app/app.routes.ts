@@ -8,6 +8,13 @@ import { ConfirmacionContrasenaComponent } from './confirmacion-contrasena/confi
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { FAQComponent } from './faq/faq.component';
 import { LandingLogueadoComponent } from './landing-logueado/landing-logueado.component';
+import { ListarPersonalComponent } from './listar-personal/listar-personal.component';
+import { RegistrarPersonalComponent } from './registrar-personal/registrar-personal.component';
+import { EditarDatosPersonalComponent } from './editar-datos-personal/editar-datos-personal.component';
+import { ListaHabitacionesComponent } from './lista-habitaciones/lista-habitaciones.component';
+import { AgregarHabitacionComponent } from './agregar-habitacion/agregar-habitacion.component';
+import { EditarHabitacionComponent } from './editar-habitacion/editar-habitacion.component';
+
 
 
 export const routes: Routes = [
@@ -21,5 +28,11 @@ export const routes: Routes = [
   { path: 'faq', component: FAQComponent},
   { path: 'principal', component: NavComponent},
   { path: 'landing-logueado', component: LandingLogueadoComponent},
+  { path: 'listar-personal', component: ListarPersonalComponent},
+  { path: 'registrar-personal', component: RegistrarPersonalComponent},
+  { path: 'editar-datos-personal', component: EditarDatosPersonalComponent},
+  { path: 'lista-habitaciones', component: ListaHabitacionesComponent},
+  { path: 'agregar-habitacion', component: AgregarHabitacionComponent},
+  { path: 'editar-habitacion', component: EditarHabitacionComponent},
   { path: '**', redirectTo: 'principal'}
 ];
