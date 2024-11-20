@@ -16,10 +16,12 @@ import {FaqLogueadoComponent} from "./faq-logueado/faq-logueado.component";
 import {authenticatedGuard} from "./guards/authenticated.guard";
 import {HistorialReservasComponent} from "./historial-reservas/historial-reservas.component";
 import {authGuard} from "./guards/auth.guard";
-
-
-
-
+import { ListarPersonalComponent } from './listar-personal/listar-personal.component';
+import { RegistrarPersonalComponent } from './registrar-personal/registrar-personal.component';
+import { EditarDatosPersonalComponent } from './editar-datos-personal/editar-datos-personal.component';
+import { ListaHabitacionesComponent } from './lista-habitaciones/lista-habitaciones.component';
+import { AgregarHabitacionComponent } from './agregar-habitacion/agregar-habitacion.component';
+import { EditarHabitacionComponent } from './editar-habitacion/editar-habitacion.component';
 
 
 
@@ -41,5 +43,11 @@ export const routes: Routes = [
   { path: 'reservar/:id', component: DetalleHabitacionComponent, canActivate:[authGuard]},
   { path: 'ubicacion-logueado', component: UbicacionLogueadoComponent, canActivate:[authGuard]},
   { path: 'faq-logueado', component: FaqLogueadoComponent, canActivate:[authGuard]},
+  { path: 'listar-personal', component: ListarPersonalComponent},
+  { path: 'registrar-personal', component: RegistrarPersonalComponent},
+  { path: 'editar-datos-personal', component: EditarDatosPersonalComponent},
+  { path: 'lista-habitaciones', component: ListaHabitacionesComponent},
+  { path: 'agregar-habitacion', component: AgregarHabitacionComponent},
+  { path: 'editar-habitacion', component: EditarHabitacionComponent},
   { path: '**', redirectTo: 'principal'}
 ];

@@ -1,0 +1,72 @@
+    <header class="header">
+      <div class="logo-container">
+        <img src="LogoIBIS.png" alt="Logo Hotel Ibis" class="logo">
+        <span class="company-name">HOTEL IBIS</span>
+      </div>
+    </header>
+  
+    <main class="main-container">
+      <nav class="sidebar">
+        <ul>
+          <a routerLink="/landing-logueado"><li>Principal</li></a>
+          <a routerLink="/listar-personal"><li class="active">Personal</li></a>
+          <a routerLink="/lista-habitaciones"><li>Habitaciones</li></a>
+        </ul>
+      </nav>
+  
+      <section class="content">
+        <h1>EDITAR DATOS DEL PERSONAL</h1>
+        <p class="breadcrumb">Personal > Editar</p>
+  
+        <div class="form-container">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" class="input-field">
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" class="input-field">
+          </div>
+          <div class="form-group">
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" class="input-field">
+          </div>
+          <div class="form-group">
+            <label for="rol">Rol</label>
+            <select id="rol" class="input-field">
+              <option value="" disabled selected>Seleccione un rol</option>
+              <option value="Administrador">Administrador</option>
+              <option value="Recepcionista">Recepcionista</option>
+              <option value="Mantenimiento">Mantenimiento</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fecha-inicio">Fecha de Inicio</label>
+            <input type="date" id="fecha-inicio" class="input-field">
+          </div>
+          <div class="form-group">
+            <label for="fecha-fin">Fecha de Fin</label>
+            <input type="date" id="fecha-fin" class="input-field">
+          </div>
+        </div>
+  
+        <div class="button-group">
+          <button class="save-button" (click)="abrirModal()">Guardar</button>
+        </div>
+      </section>
+    </main>
+  
+    <footer class="footer">
+      2024 © Hotel Ibis - Trujillo, Grupo 5 | Todos los derechos reservados
+    </footer>
+
+  <!--modal del sexo-->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <p>Se editaron los datos correctamente</p>
+      <img src="confir.jpeg" alt="">
+      <div class="modal-buttons">
+        <button class="modal-cancel-button" (click)="cerrarModal()">Aceptar</button>
+      </div>
+    </div>
+  </div>
