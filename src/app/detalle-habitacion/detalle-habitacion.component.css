@@ -1,0 +1,144 @@
+.detalle-habitacion {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.titulo-habitacion {
+  font-size: 2rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.habitacion-imagenes {
+  display: flex;
+  gap: 10px;
+}
+
+.habitacion-imagenes img {
+  width: 48%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.descripcion, .detalle-hotel {
+  font-size: 1rem;
+  color: #666;
+  margin: 15px 0;
+}
+
+.subtitulo-servicios {
+  font-size: 1.5rem;
+  color: #444;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.servicios-establecimiento {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.servicio {
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+}
+
+.icono-perfil {
+  width: 80px;
+  height: 85px;
+  border-radius: 50%;
+  transition: transform 0.3s, filter 0.3s; /* Efecto de transición suave */
+}
+
+.perfil-icon:hover .icono-perfil {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+  filter: brightness(1.2); /* Aumenta el brillo */
+}
+
+.reserva-detalle {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.titulo-reserva {
+  font-size: 1.5rem;
+  color: #e63946;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.precio {
+  font-size: 1.2rem;
+  color: #444;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #ffc107; /* Color amarillo */
+  border: none;
+  color: black; /* Color del texto */
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #e6ac00; /* Un amarillo más oscuro para el efecto hover */
+}
+
+.modal-content {
+  border-radius: 10px; /* Bordes redondeados del modal */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el modal */
+  transition: all 0.3s ease-in-out; /* Animación suave al aparecer */
+}
+
+.modal-header {
+  background-color: #e63946; /* Color de fondo del encabezado */
+  color: white; /* Texto blanco */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1.2rem; /* Tamaño del texto del encabezado */
+}
+
+.modal-body {
+  text-align: center; /* Centrar el contenido */
+  font-size: 1.1rem; /* Ajustar el tamaño del texto */
+  padding: 20px; /* Espaciado interno */
+}
+
+.spinner-border {
+  margin-top: 15px; /* Espaciado entre el spinner y el mensaje */
+  color: #007bff; /* Cambiar el color del spinner */
+}
+
+#pagoMensaje {
+  margin-bottom: 20px; /* Espaciado entre el mensaje y el spinner */
+  font-size: 1rem; /* Tamaño del texto */
+  color: #333; /* Color del texto */
+}
+
+.btn-close {
+  background-color: transparent; /* Botón de cierre transparente */
+  border: none; /* Sin borde */
+  &:hover {
+    color: #e63946; /* Cambiar color al pasar el mouse */
+  }
+
+}
+

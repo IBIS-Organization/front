@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de la Habitación - Hotel IBIS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="LogoIBIS.png" alt="Hotel Ibis" width="100" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#habitaciones" >Habitaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ubicacion-logueado">Ubicación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/faq-logueado">Preguntas frecuentes</a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center">
+        <a  class="nav-link perfil-icon">
+          <i class="fas fa-user-circle"></i>
+          <img src="iconoperfil.png" alt="Perfil" class="icono-perfil">
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="hotel-container">
+  <main class="main-content">
+    <h1>Detalles de la habitación</h1>
+
+    <!-- Contenedor de dos columnas para "Habitación" y "Resumen del servicio" -->
+    <div class="content-grid">
+      <!-- Detalles de la habitación -->
+      <section class="room-details">
+        <h2>HABITACIÓN ESTÁNDAR</h2>
+
+        <div class="room-container">
+          <div class="room-image">
+            <img src="room-image.jpg" alt="Habitación Estándar">
+          </div>
+
+          <div class="room-features">
+            <div class="feature">
+              <img src="bed-icon.svg" alt="Cama">
+              <span>1 cama</span>
+            </div>
+            <div class="feature">
+              <img src="size-icon.svg" alt="Tamaño">
+              <span>17 m²</span>
+            </div>
+            <div class="feature">
+              <img src="people-icon.svg" alt="Personas">
+              <span>máx. 2 personas</span>
+            </div>
+            <div class="feature">
+              <img src="tv-icon.svg" alt="TV">
+              <span>TV disponible</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resumen del servicio -->
+      <section class="booking-summary">
+        <h2>Resumen del servicio</h2>
+
+        <div class="booking-details">
+          <div class="check-times">
+            <img src="clock-icon.svg" alt="Horarios">
+            <span>Check-in 15:00 | Check-out 12:00</span>
+          </div>
+          <div class="dates">
+            <span>12 de noviembre de 2024 → 13 de noviembre de 2024</span>
+            <span>1 noche</span>
+          </div>
+          <div class="guests">
+            <span>1 adulto</span>
+          </div>
+          <div class="room-type">
+            <span>Habitación estándar</span>
+          </div>
+        </div>
+
+        <div class="price-summary">
+          <div class="price-row">
+            <span>HABITACIÓN</span>
+            <span>s/.200.00</span>
+          </div>
+          <div class="price-row">
+            <span>Impuestos</span>
+            <span>s/.38.00</span>
+          </div>
+          <div class="price-total">
+            <span>TOTAL</span>
+            <span>s/.238.00</span>
+          </div>
+        </div>
+
+        <button class="paypal-btn">
+          Comprar ahora con PayPal
+        </button>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>2024 © Hotel Ibis - Trujillo.Grupo5 | Todos los derechos reservados</p>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
