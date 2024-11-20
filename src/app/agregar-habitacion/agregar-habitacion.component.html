@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Habitación</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="LogoIBIS.png" alt="Logo Hotel Ibis" class="logo">
+      <span class="company-name">HOTEL IBIS</span>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <nav class="sidebar">
+      <ul>
+        <a routerLink="/landing-logueado"><li>Principal</li></a>
+        <a routerLink="/listar-personal"><li>Personal</li></a>
+        <a routerLink="/lista-habitaciones"><li class="active">Habitaciones</li></a>
+      </ul>
+    </nav>
+
+    <section class="content">
+      <h1>AGREGAR HABITACIÓN</h1>
+      <p class="breadcrumb">Habitaciones > Agregar</p>
+
+      <div class="form-container">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" class="input-field">
+        </div>
+        <div class="form-group">
+          <label for="personas">Personas</label>
+          <input type="text" id="personas" class="input-field">
+        </div>
+        <div class="form-group">
+          <label for="sede">Sede</label>
+          <input type="text" id="sede" class="input-field">
+        </div>
+        <div class="form-group">
+          <label for="costo">Costo</label>
+          <input type="text" id="costo" class="input-field">
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="cancel-button" ><a routerLink="/lista-habitaciones">Cancelar</a></button>
+        <button class="save-button" (click)="abrirModal()">Guardar</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    2024 © Hotel Ibis - Trujillo, Grupo 5 | Todos los derechos reservados
+  </footer>
+</body>
+</html>
+
+  <!--modal del sexo-->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <p>Se agregó la habitación correctamente</p>
+      <img src="bien.webp" alt="">
+      <div class="modal-buttons">
+        <button class="modal-cancel-button" (click)="cerrarModal()">Aceptar</button>
+      </div>
+    </div>
+  </div>

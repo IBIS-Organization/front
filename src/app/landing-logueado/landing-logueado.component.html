@@ -1,0 +1,231 @@
+<div class="container-fluid">
+    <!-- Header con logo y menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="LogoIBIS.png" alt="Hotel Ibis" width="100" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#habitaciones" >Habitaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/ubicacion-logueado">Ubicación</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/faq-logueado">Preguntas frecuentes</a>
+            </li>
+        </ul>
+          <div class="d-flex align-items-center flex-column">
+            <div *ngIf="user" class="text-center">
+              <p>{{user.firstName}}</p>
+            </div>
+            <a routerLink="/historial-reservas" class="nav-link perfil-icon">
+              <img src="iconoperfil.png" alt="Perfil" class="icono-perfil">
+            </a>
+            <a class="nav-link cerrar-sesion" (click)="logout()">
+              <h5>CERRAR SESIÓN</h5>
+            </a>
+          </div>
+        </div>
+        </div>
+  </nav>
+
+  <form (ngSubmit)="FiltrarHabitaciones()" >
+    <div class="search-container bg-light p-4">
+      <div class="row">
+        <div class="col-md-2">
+          <label for="fechaReserva" class="form-label">INGRESO</label>
+          <input [(ngModel)]="filtro.fechaInicio" name = "fechaInicio" type="date" [min]="ahora" [(ngModel)] = "fingreso" (ngModelChange)="CambioFecha()"  class="form-control" id="fingreso" placeholder="Dom 20 oct - Lun 21 oct">
+        </div>
+        <div class="col-md-2">
+          <label for="fechaReserva" class="form-label">SALIDA</label>
+          <input [(ngModel)]="filtro.fechaFin" name = "fechaFin" type="date" [min]="deshabilitar" class="form-control" id="fechaReserva" placeholder="Dom 20 oct - Lun 21 oct">
+        </div>
+        <div  class="col-md-2">
+          <label for="habitacion" class="form-label">HABITACIÓN</label>
+          <select [(ngModel)]="filtro.categoria" name = "categoria" class="form-select" id="habitacion">
+            <option selected>Seleccione...</option>
+            <option *ngFor="let habitacion of habitaciones">{{habitacion.categoria}}</option>
+          </select>
+        </div>
+
+        <!--<div class="col-md-2">
+          <label for="cantidad" class="form-label">¿CUÁNTAS?</label>
+          <select class="form-select" id="cantidad">
+            <option selected>1 Habitación</option>
+            <option value="2">2 Habitaciones</option>
+            <option value="3">3 Habitaciones</option>
+            <option value="4">4 Habitaciones</option>
+          </select>
+        </div> -->
+        <div class="col-md-2">
+          <label for="huespedes" class="form-label">HUÉSPEDES</label>
+          <select [(ngModel)]="filtro.capacidad" name = "capacidad" class="form-select" id="huespedes">
+            <option selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end">
+          <button type="submit" class="btn btn-danger w-100">CONSULTAR</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Nueva sección de información -->
+  <div class="info-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <p class="welcome-text">
+            <strong>Bienvenidos a Trujillo</strong><br>
+            En Hotel Ibis, estaremos gustosos de atenderlo, gracias por su preferencia.
+          </p>
+          <img src="mapatrujillo.png" alt="Mapa de Trujillo" class="map-image">
+          <p class="highlight-text">
+            La ciudad de primavera peruana, con rica historia y abundantes atractivos turísticos.
+          </p>
+          <p class="location-text">
+            Trujillo, Trujillo, Perú.
+          </p>
+        </div>
+        <div class="col-md-8">
+          <p class="intro-text">
+            <span class="letter-S">S</span> iéntase como en casa, tómese un delicioso desayuno matutino observando el Morro
+            de Calzada desde nuestro comedor en el 6to piso. Nuestro Hotel de 4 estrellas tiene todo para su feliz estadía, no dude en contactarnos y acudiremos a su solicitud.
+          </p>
+          <div class="hotel-images">
+            <img src="ibis1.png" alt="Hotel Ibis" class="hotel-image">
+            <img src="ibis2.png" alt="Hotel Interior" class="hotel-image">
+          </div>
+        </div>
+
+
+        <section class="container-fluid mt-5">
+          <h2 class="text-center mb-4" style="color: #000000; font-size: 32px; font-weight: bold; text-transform: uppercase;">Habitaciones</h2>
+          <div id="habitacionesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <!-- Primera Slide -->
+              <div class="carousel-item active">
+                <div class="row g-4 justify-content-center">
+                  <div *ngIf="habitacion1"   class="col-md-4">
+                    <div class="tarjeta shadow-lg rounded-lg p-3">
+                      <img [src] ="habitacion1.img" alt="Habitación estandar con 1 cama doble" class="img-fluid rounded-top">
+                      <div class="card-info">
+                        <h2>{{habitacion1.categoria}}</h2>
+                        <p class="capacity">{{habitacion1.capacidad}} pers. máx • 17 m² / 182 sq ft</p>
+                        <p class="bed-info">1 x Cama/s individuales/s</p>
+                        <p class="price">Desde <strong>S/. {{habitacion1.precio}}</strong></p>
+                        <p class="taxes">Gastos e impuestos incluidos</p>
+                        <button class="btn btn-primary btn-reservar w-100" [routerLink] ="['/reservar',habitacion1.id]" >Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div  *ngIf="habitacion2"   class="col-md-4">
+                    <div class="tarjeta shadow-lg rounded-lg p-3">
+                      <img [src] ="habitacion2.img" alt="Habitación estandar con 1 cama doble" class="img-fluid rounded-top">
+                      <div class="card-info">
+                        <h2>{{habitacion2.categoria}}</h2>
+                        <p class="capacity">{{habitacion2.capacidad}} pers. máx • 17 m² / 182 sq ft</p>
+                        <p class="bed-info">1 x Cama/s doble/s</p>
+                        <p class="price">Desde <strong>S/. {{habitacion2.precio}}</strong></p>
+                        <p class="taxes">Gastos e impuestos incluidos</p>
+                        <button class="btn btn-primary btn-reservar w-100" [routerLink] ="['/reservar',habitacion2.id]" >Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div  *ngIf="habitacion3" class="col-md-4">
+                    <div class="tarjeta shadow-lg rounded-lg p-3">
+                      <img [src] ="habitacion3.img" alt="Habitación estandar con 2 camas dobles" class="img-fluid rounded-top">
+                      <div class="card-info">
+                        <h2>{{habitacion3.categoria}}</h2>
+                        <p class="capacity">{{habitacion3.capacidad}} pers. máx • 27 m² / 182 sq ft</p>
+                        <p class="bed-info">2 x Cama/s doble/s</p>
+                        <p class="price">Desde <strong>S/. {{habitacion3.precio}}</strong></p>
+                        <p class="taxes">Gastos e impuestos incluidos</p>
+                        <button class="btn btn-primary btn-reservar w-100" [routerLink] ="['/reservar',habitacion3.id]" >Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Segunda Slide -->
+              <div class="carousel-item">
+                <div class="row g-4 justify-content-center">
+                  <div *ngIf="habitacion4"  class="col-md-4">
+                    <div class="tarjeta shadow-lg rounded-lg p-3">
+                      <img [src] ="habitacion4.img" alt="Habitación estándar con 1 cama doble" class="img-fluid rounded-top">
+                      <div class="card-info">
+                        <h2>{{habitacion4.categoria}}</h2>
+                        <p class="capacity">{{habitacion4.capacidad}} pers. máx • 20 m² / 215 sq ft</p>
+                        <p class="bed-info">1 x Cama/s dobles/s</p>
+                        <p class="price">Desde <strong>S/. {{habitacion4.precio}}</strong></p>
+                        <p class="taxes">Gastos e impuestos incluidos</p>
+                        <button class="btn btn-primary btn-reservar w-100" [routerLink] ="['/reservar',habitacion4.id]" >Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div  *ngIf="habitacion5" class="col-md-4">
+                    <div class="tarjeta shadow-lg rounded-lg p-3 ">
+                      <img [src] ="habitacion5.img" alt="Habitación no disponible" class="img-fluid rounded-top">
+                      <div class="card-info">
+                        <h2>{{habitacion5.categoria}}</h2>
+                        <p class="capacity">{{habitacion5.capacidad}} pers. máx • 26 m² / 182 sq ft</p>
+                        <p class="bed-info">2 x Cama/s dobles/s</p>
+                        <p class="price">Desde <strong>S/. {{habitacion5.precio}}</strong></p>
+                        <p class="taxes">Gastos e impuestos incluidos</p>
+                        <button class="btn btn-secondary btn-reservar w-100" [routerLink] ="['/reservar',habitacion5.id]" >Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div *ngIf="habitacion6" class="col-md-4">
+                    <div class="tarjeta shadow-lg rounded-lg p-3">
+                      <img [src] ="habitacion6.img" class="img-fluid rounded-top">
+                      <div class="card-info">
+                        <h2>{{habitacion6.categoria}}</h2>
+                        <p class="capacity">{{habitacion6.capacidad}} pers. máx • 30 m² / 323 sq ft</p>
+                        <p class="bed-info">1 x Cama king</p>
+                        <p class="price">Desde <strong>S/. {{habitacion6.precio}}</strong></p>
+                        <p class="taxes">Gastos e impuestos incluidos</p>
+                        <button class="btn btn-primary btn-reservar w-100" [routerLink] ="['/reservar',habitacion6.id]" >Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flechas de navegación -->
+            <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#habitacionesCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next custom-next" type="button" data-bs-target="#habitacionesCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </section>
+
+
+
+      </div>
+      <div class="footer">
+        <p>2024 © Hotel Ibis - Trujillo_Grupo5 | Todos los derechos reservados</p>
+      </div>
+    </div>
+  </div>
+</div>

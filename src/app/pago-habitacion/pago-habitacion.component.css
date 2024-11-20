@@ -1,0 +1,225 @@
+/* Variables */
+:root {
+  --primary-color: #e41f35;
+  --secondary-color: #333;
+  --background-color: #f5f5f5;
+  --white: #fff;
+  --gray-light: #eee;
+  --gray: #666;
+  --border-radius: 15px;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Header Styles */
+.navbar {
+  background-image: url("/landingpage.jpg");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid lightgray;
+  height: 540px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.fas.fa-user-circle {
+  font-size: 1.5em;
+  color: white;
+  margin-right: 10px;
+}
+
+.nav-link {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin: 0 15px;
+}
+
+.nav-link:hover {
+  color: red;
+}
+
+.icono-perfil {
+  width: 80px;
+  height: 85px;
+  border-radius: 50%;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.perfil-icon:hover .icono-perfil {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+.hotel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Main content */
+.main-content h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.main-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+/* Content Grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 30px;
+  margin-top: 30px;
+  align-items: start; /* Alinea ambos elementos en la parte superior */
+  max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Room details */
+.room-details {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  height: fit-content; /* Ajusta al contenido sin expandirse */
+}
+
+.room-details h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.room-image img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+}
+
+.room-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.room-features .feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1em;
+}
+
+.room-features .feature img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Booking summary */
+.booking-summary {
+  background: var(--gray-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  height: fit-content; /* Ajusta al contenido */
+  font-size: 1em;
+}
+
+.booking-summary h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.booking-summary .booking-details {
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.booking-summary .booking-details > div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary-color);
+}
+
+.booking-summary .price-summary .price-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: var(--secondary-color);
+}
+
+.booking-summary .price-summary .price-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-light);
+  color: var(--secondary-color);
+}
+
+.booking-summary .paypal-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffc439;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-summary .paypal-btn:hover {
+  background-color: #f4b800;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--gray);
+  font-size: 0.9em;
+  margin-top: 40px;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .content-grid {
+    grid-template-columns: 1fr; /* Colapsa a una columna en pantallas más pequeñas */
+  }
+
+  .room-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

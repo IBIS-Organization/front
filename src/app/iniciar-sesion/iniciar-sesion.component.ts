@@ -23,16 +23,15 @@ export class IniciarSesionComponent {
       console.error('Email y contraseña son requeridos');
       return;
     }
-  
+
     this.service.login(this.email, this.password, (token) => {
       console.log('Token recibido en el callback:', token);
     }).subscribe({
-      next: () => this.router.navigate(['/principal']),
+      next: () => this.router.navigate(['/landing-logueado']),
       error: (err) => {
         console.error('Login Failed', err);
         this.errorMessage = 'Error de autenticación. Por favor, revisa tus credenciales.';
-      }
-    });
-  }
+   }
+    });
+  }
 }
- 

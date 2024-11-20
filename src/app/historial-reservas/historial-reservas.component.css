@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  border-bottom: 1px solid #ddd;
+}
+
+.historial-reservaciones {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.titulo-historial {
+  font-size: 2.5rem;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.reservacion-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ocupa todo el ancho posible */
+}
+
+.icono-perfil {
+  width: 80px;
+  height: 85px;
+  border-radius: 50%;
+  transition: transform 0.3s, filter 0.3s; /* Efecto de transición suave */
+}
+
+.perfil-icon:hover .icono-perfil {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+  filter: brightness(1.2); /* Aumenta el brillo */
+}
+
+.img-thumbnail {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.detalles-reservacion {
+  margin-left: 20px;
+}
+
+.detalles-reservacion h5 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 5px;
+}
+
+.detalles-reservacion p {
+  font-size: 1rem;
+  color: #666;
+  margin:0;
+  }
