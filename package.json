@@ -21,6 +21,7 @@
     "@angular/platform-server": "^18.2.7",
     "@angular/router": "^18.2.7",
     "@angular/ssr": "^18.2.7",
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "@ng-bootstrap/ng-bootstrap": "^17.0.1",
     "@popperjs/core": "^2.11.8",
     "audit": "^0.0.6",
