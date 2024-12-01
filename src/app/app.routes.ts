@@ -23,9 +23,11 @@ import { ListaHabitacionesComponent } from './lista-habitaciones/lista-habitacio
 import { AgregarHabitacionComponent } from './agregar-habitacion/agregar-habitacion.component';
 import { EditarHabitacionComponent } from './editar-habitacion/editar-habitacion.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
+import { RecepcionistaComponent } from './recepcionista/recepcionista.component';
 
 
 export const routes: Routes = [
+  { path: 'recepcionista', component: RecepcionistaComponent },
   { path: 'tarjeta', component: TarjetaComponent }, 
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: 'iniciarSesion', component: IniciarSesionComponent }, // Ruta para el componente de iniciar sesión
