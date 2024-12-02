@@ -1,0 +1,103 @@
+<div class="checkin-container">
+  <!-- Barra lateral -->
+  <div class="sidebar">
+    <img src="BLACK_IBIS.png" alt="Hotel Ibis Logo" class="logo" />
+    <nav>
+      <ul>
+        <li>Principal</li>
+        <li>Perfil</li>
+        <li>Check in</li>
+        <li>Check out</li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <div class="header">
+      <div class="header-content">
+        <img
+          src="Cuarto.png"
+          alt="Icono de Lista de Servicios"
+          class="header-icon"
+        />
+        <div class="header-text">
+          <h2>LISTA DE SERVICIOS</h2>
+          <p>Habitaciones > Check in</p>
+        </div>
+      </div>
+      <hr class="header-line" />
+    </div>
+
+    <div class="custom-table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Habitación</th>
+            <th>Hora</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.habitacion }}</td>
+            <td>{{ cliente.hora }}</td>
+            <td>
+              <img
+                src="Listo.png"
+                alt="Check"
+                class="action-icon"
+                (click)="registrarCheckIn(cliente.nombre)"
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/256/4226/4226577.png"
+                alt="Edit"
+                class="action-icon"
+                (click)="openEditModal(cliente)"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal para Check-in -->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <p>¡Check in registrado para {{ clienteSeleccionado }}!</p>
+      <button class="close-check" (click)="closeModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Modal para Editar -->
+  <div class="modal" *ngIf="showModalEdit">
+    <div class="modal-content edit-modal">
+      <h3 class="modal-title">Editar Hora</h3>
+      <div class="edit-time">
+        <label for="hora">Hora:</label>
+        <input
+          type="number"
+          id="hora"
+          [(ngModel)]="editHora"
+          min="0"
+          max="23"
+        />
+        <label for="minutos">Minutos:</label>
+        <input
+          type="number"
+          id="minutos"
+          [(ngModel)]="editMinutos"
+          min="0"
+          max="59"
+        />
+      </div>
+      <div class="modal-buttons">
+        <button class="save-edit" (click)="guardarEdicion()">Listo</button>
+        <button class="close-edit" (click)="closeEditModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

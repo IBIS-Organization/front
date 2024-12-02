@@ -24,9 +24,11 @@ import { AgregarHabitacionComponent } from './agregar-habitacion/agregar-habitac
 import { EditarHabitacionComponent } from './editar-habitacion/editar-habitacion.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { RecepcionistaComponent } from './recepcionista/recepcionista.component';
+import { CheckInComponent } from './check-in/check-in.component';
 
 
 export const routes: Routes = [
+  {path:'check-in', component:CheckInComponent},
   { path: 'recepcionista', component: RecepcionistaComponent },
   { path: 'tarjeta', component: TarjetaComponent }, 
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },

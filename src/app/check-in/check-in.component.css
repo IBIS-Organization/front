@@ -1,0 +1,287 @@
+/* Contenedor principal */
+.checkin-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f8f4f4;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Barra lateral */
+  .sidebar {
+    width: 250px;
+    background-color: #800000; /* Rojo oscuro */
+    color: white;
+    padding: 20px;
+  }
+  
+  .sidebar .logo {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 55px;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar nav ul li {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 110px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .sidebar nav ul li:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+  }
+  
+  /* Contenido principal */
+  .main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #fffafc;
+  }
+  
+  /* Encabezado */
+  .header {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Agregado para bajar el título */
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .header-icon {
+    width: 80px;
+    height: auto;
+  }
+  
+  .header-text h2 {
+    font-size: 30px; /* Igualar tamaño de "FICHA PERSONAL" */
+    margin: 0;
+    font-weight: bold;
+    color: #000; /* Negro */
+  }
+  
+  .header-text p {
+    font-size: 18px;
+    margin: 0;
+    color: #555;
+  }
+  
+  .header-line {
+    border: none;
+    border-top: 1px solid #000;
+    margin-top: 10px;
+  }
+  
+  /* Tabla de servicios */
+  .services-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    font-size: 16px;
+  }
+  
+  .services-table thead {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+  
+  .services-table th,
+  .services-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .services-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .icon {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .icon:hover {
+    transform: scale(1.2);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    color: #555;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px; /* Padding para el contenido */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 40%; /* Reduce el ancho */
+    max-width: 300px; /* Tamaño máximo de la ventana */
+    margin: 0 auto; /* Centrado horizontal */
+  }
+  
+  .modal-content p {
+    font-size: 16px; /* Tamaño de fuente */
+    margin-top: 20px; /* Añade espacio superior */
+    margin-bottom: 20px; /* Añade espacio inferior para separar del botón */
+  }
+
+  .modal-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color: #b22222;
+  }
+  
+  .check-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; /* Reduce el padding */
+    font-size: 14px; /* Reduce el tamaño de la fuente */
+    width: 80px; /* Define un ancho más pequeño si es necesario */
+    cursor: pointer;
+  }
+  
+  .check-button:hover {
+    background-color: #45a049;
+  }
+
+  .edit-modal {
+    width: 300px;
+    padding: 20px;
+  }
+  
+  .edit-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .edit-time label {
+    font-size: 16px;
+  }
+  
+  .edit-time input {
+    width: 60px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .action-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain; /* Mantiene la proporción original de la imagen */
+  }
+  .close-check {
+    background-color: #800000; /* Rojo oscuro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; /* Ajusta el tamaño */
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .close-check:hover {
+    background-color: #b22222; /* Efecto hover */
+  }
+
+  /* Estilo para el título del modal */
+.modal-title {
+  margin-bottom: 20px; /* Espacio extra debajo del título */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Contenedor para los campos de hora y minutos */
+.edit-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Espacio entre "Hora" y "Minutos" */
+  margin-bottom: 20px; /* Espacio entre los campos y los botones */
+}
+
+/* Contenedor para los botones */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px; /* Espacio entre los botones */
+}
+
+/* Campos de hora y minutos */
+.time-input label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.time-input input {
+  width: 60px;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.close-edit {
+  background-color: #800000; /* Rojo oscuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px; /* Ajusta el tamaño */
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.close-edit:hover {
+  background-color: #b22222; /* Hover rojo */
+}
+.modal-buttons {
+  display: flex;
+  justify-content: center; /* Centra los botones */
+  gap: 15px; /* Espacio entre los botones */
+}
