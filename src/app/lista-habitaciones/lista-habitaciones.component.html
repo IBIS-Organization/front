@@ -8,9 +8,11 @@
   <main class="main-container">
     <nav class="sidebar">
       <ul>
-        <a routerLink="/landing-logueado"><li>Principal</li></a>
         <a routerLink="/listar-personal"><li>Personal</li></a>
         <a routerLink="/lista-habitaciones"><li class="active">Habitaciones</li></a>
+        <a (click)="logout()" >
+          <li>Cerrar Sesion</li>
+        </a>
       </ul>
     </nav>
 
@@ -24,99 +26,25 @@
             <th>Habitación</th>
             <th>Personas</th>
             <th>Sede</th>
+            <th>Cantidad Total</th>
+            <th>Cantidad Reservada</th>
             <th>Costo</th>
-            <th>Acciones</th>
+            
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let habitacion of habitaciones">
           <tr>
-            <td>Estándar con 1 cama</td>
-            <td>2 personas</td>
-            <td>Lima</td>
-            <td>s/. 120.00</td>
-            <td>
-              
-              <button class="action-button edit-button">
-                <a routerLink="/editar-habitacion"><img src="lapiz.png" alt="Editar" class="icon"></a>
-              </button>
-              <button class="action-button delete-button" (click)="abrirModal()">
-                <img src="basura.png" alt="Eliminar" class="icon">
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Estándar con 2 camas</td>
-            <td>2 personas</td>
+            <td>{{habitacion.categoria}}</td>
+            <td>{{habitacion.capacidad}} personas</td>
             <td>Trujillo</td>
-            <td>s/. 170.00</td>
-            <td>
-              <button class="action-button edit-button">
-                <a routerLink="/editar-habitacion"><img src="lapiz.png" alt="Editar" class="icon"></a>
-              </button>
-              <button class="action-button delete-button" (click)="abrirModal()">
-                <img src="basura.png" alt="Eliminar" class="icon">
-              </button>
-            </td>
+            <td>{{habitacion.cantidadTotal}}</td>
+            <td>{{habitacion.cantidadReservada}}</td>
+            <td>S/. {{habitacion.precio}}</td>
+            
           </tr>
-          <tr>
-            <td>Habitación deluxe</td>
-            <td>4 personas</td>
-            <td>Lima</td>
-            <td>s/. 250.00</td>
-            <td>
-              <button class="action-button edit-button">
-                <a routerLink="/editar-habitacion"><img src="lapiz.png" alt="Editar" class="icon"></a>
-              </button>
-              <button class="action-button delete-button" (click)="abrirModal()">
-                <img src="basura.png" alt="Eliminar" class="icon">
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Habitación deluxe con 2 camas dobles</td>
-            <td>4 personas</td>
-            <td>Lima</td>
-            <td>s/. 200.00</td>
-            <td>
-              <button class="action-button edit-button">
-                <a routerLink="/editar-habitacion"><img src="lapiz.png" alt="Editar" class="icon"></a>
-              </button>
-              <button class="action-button delete-button" (click)="abrirModal()">
-                <img src="basura.png" alt="Eliminar" class="icon">
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Estándar con cama doble</td>
-            <td>2 personas</td>
-            <td>Lima</td>
-            <td>s/. 180.00</td>
-            <td>
-              <button class="action-button edit-button">
-                <a routerLink="/editar-habitacion"><img src="lapiz.png" alt="Editar" class="icon"></a>
-              </button>
-              <button class="action-button delete-button" (click)="abrirModal()">
-                <img src="basura.png" alt="Eliminar" class="icon">
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Habitación Premium con 1 cama king</td>
-            <td>2 personas</td>
-            <td>Trujillo</td>
-            <td>s/. 300.00</td>
-            <td>
-              <button class="action-button edit-button">
-                <a routerLink="/editar-habitacion"><img src="lapiz.png" alt="Editar" class="icon"></a>
-              </button>
-              <button class="action-button delete-button" (click)="abrirModal()">
-                <img src="basura.png" alt="Eliminar" class="icon">
-              </button>
-            </td>
-          </tr>
+          
         </tbody>
       </table>
-      <button class="add-button" ><a routerLink="/agregar-habitacion">Agregar Habitación</a></button>
     </section>
   </main>
   <footer class="footer">

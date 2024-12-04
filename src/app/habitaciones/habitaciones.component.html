@@ -83,23 +83,10 @@
                     <h3>{{habitacion.categoria}}</h3>
                     <p>{{habitacion.descripcion}}</p>
                     <p class="room-price">Desde S/{{habitacion.precio}}</p>
-                    <a href="#" class="book-now">Reservar Ahora</a>
+                    <a routerLink="/iniciarSesion" class="book-now">Reservar Ahora</a>
                 </div>
             </div>
 
-           <!-- <div class="room-card">
-                <div class="room-image">
-                    <img src="https://via.placeholder.com/800x400" alt="Habitación Doble">
-                </div>
-                <div class="room-info">
-                    <h3>Habitación Doble</h3>
-                    <p>Habitación de 16 m². Incluye baño en la habitación con agua caliente, minibar, TV, y más.</p>
-                    <p class="room-price">Desde S/160.00</p>
-                    <a href="#" class="book-now">Reservar Ahora</a>
-                </div>
-            </div>-->
-
-            <!-- Puedes añadir más tarjetas de habitaciones aquí -->
         </div>
 <div *ngIf="habitaciones.length === 0">
   <p>

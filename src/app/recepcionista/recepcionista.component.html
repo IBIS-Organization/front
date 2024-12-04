@@ -1,0 +1,88 @@
+<div class="recepcionista-container">
+  <!-- Barra lateral -->
+  <div class="sidebar">
+    <img src="BLACK_IBIS.png" alt="Hotel Ibis Logo" class="logo" />
+    <nav>
+      <ul>
+        <a routerLink="/recepcionista"><li>Perfil</li></a>
+        <a routerLink="/pendientes"><li>Pendientes</li></a>
+        <a routerLink="/check-in"><li>Check in</li></a>
+        <a routerLink="/check-out"><li>Check out</li></a>
+        <a (click)="logout()"><li>Cerrar Sesion</li></a>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+      <div class="header">
+          <div class="header-content">
+            <img src="https://cdn-icons-png.flaticon.com/512/30/30427.png" alt="Icono de Ficha Personal" class="header-icon" />
+            <div class="header-text">
+              <h2>FICHA PERSONAL</h2>
+              <p>Recepcionista</p>
+            </div>
+          </div>
+          <hr class="header-line" />
+        </div>
+        
+    <form class="form" (ngSubmit)="onSubmit()" #profileForm="ngForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <div class="input-container">
+            <input 
+              type="text" 
+              [(ngModel)]="user.firstName" 
+              name="name" 
+              class="form-control"
+              required 
+              [disabled]="isNameDisabled">
+            <button type="button" class="edit-icon" (click)="toggleField('name')">
+              <i class="fas fa-edit"></i> <!-- Ícono de lápiz -->
+            </button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Apellido:</label>
+          <div class="input-container">
+            <input 
+              type="text" 
+              [(ngModel)]="user.lastName" 
+              class="form-control"
+              name="lastName" 
+              required 
+              [disabled]="isLastNameDisabled">
+            <button type="button" class="edit-icon" (click)="toggleField('lastName')">
+              <i class="fas fa-edit"></i> <!-- Ícono de lápiz -->
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input 
+            type="email" 
+            [(ngModel)]="user.email" 
+            class="form-control"
+            name="email" 
+            required 
+            [disabled]="isEmailDisabled">
+
+            <button type="button" class="edit-icon" (click)="toggleField('email')">
+              <i class="fas fa-edit"></i> <!-- Ícono de lápiz -->
+            </button>
+        </div>
+      </div>
+      <button class="edit-button" >
+          Guardar
+        </button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  2024 © Hotel Ibis - Trujillo_Grupo05 | Todos los derechos reservados
+</footer>

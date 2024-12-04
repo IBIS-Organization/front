@@ -1,0 +1,76 @@
+<!-- tarjeta.component.html -->
+<div class="contenedor-principal">
+  <div class="progreso">
+    <img src="Selechab.png" alt="Selección de habitación" class="icono-progreso">
+    <img src="separar.png" alt="Espacio" class="separador">
+    <img src="Infopago.png" alt="Información de pago" class="icono-progreso">
+    <img src="separar.png" alt="Espacio" class="separador">
+    <img src="Solicitud.png" alt="Solicitud de reserva" class="icono-progreso">
+  </div>
+
+  <div class="contenedor-pago">
+    <div class="formulario-pago">
+      <div class="titulo-tarjeta">
+        <h2>Tarjeta de Crédito</h2>
+        <div class="logos-tarjeta">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+        </div>
+      </div>
+      <form>
+        <div class="campo">
+          <label for="nombre">Nombre del titular*</label>
+          <input type="text" id="nombre" placeholder="Nombre completo">
+        </div>
+
+        <div class="campo">
+          <label for="numero">Número*</label>
+          <input type="text" id="numero" placeholder="Número de tarjeta">
+        </div>
+
+        <div class="campo doble">
+          <select id="mes">
+            <option value="">MES</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <!-- Añadir más meses -->
+          </select>
+          <select id="año">
+            <option value="">AÑO</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <!-- Añadir más años -->
+          </select>
+        </div>
+
+
+        <div class="campo">
+          <label for="codigo">Código de seguridad*</label>
+          <input type="text" id="codigo" placeholder="CVV">
+        </div>
+
+        <div class="campo-check">
+          <input type="checkbox" id="condiciones">
+          <label for="condiciones">
+            Acepto las <a href="#">Condiciones generales de venta</a> y las condiciones de venta y cancelación de la tarifa.
+          </label>
+        </div>
+
+        <button type="submit" class="boton-pagar">PAGAR</button>
+      </form>
+    </div>
+
+    <div class="resumen">
+      <img src="IBIS.png" alt="Hotel Ibis" class="logo">
+      <h3>Resumen del servicio</h3>
+      <p>Check-in 15:00 | Check-out 12:00</p>
+      <p>12 de noviembre de 2024 → 13 de noviembre de 2024</p>
+      <p>1 adulto</p>
+      <p>Habitación estándar</p>
+      <div class="total">
+        <span>TOTAL</span>
+        <span>s/.238.00</span>
+      </div>
+    </div>
+  </div>
+</div>

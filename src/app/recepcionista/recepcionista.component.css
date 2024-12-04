@@ -1,0 +1,191 @@
+.recepcionista-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #800000; /* Rojo oscuro */
+  color: white;
+  padding: 20px;
+}
+
+.sidebar .logo {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 55px;
+}
+
+.sidebar nav {
+  flex: 1; /* Ocupa todo el espacio disponible en el sidebar */
+  display: flex;
+  flex-direction: column; /* Organiza las opciones en columna */
+  justify-content: center; /* Centra verticalmente las opciones */
+  align-items: center; /* Centra horizontalmente las opciones */
+}
+
+.sidebar nav ul {
+  list-style: none; /* Elimina puntos de lista */
+  padding: 0; /* Sin padding interno */
+  margin: 0; /* Sin margen */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+}
+
+
+.sidebar nav ul a li {
+  text-align: center; /* Centra el texto dentro de cada opción */
+  font-size: 18px; /* Tamaño de texto */
+  cursor: pointer; /* Aparece como botón clicable */
+  color: white; /* Color del texto */
+  margin-bottom: 110px; /* Espacio entre las opciones */
+  transition: transform 0.3s ease, color 0.3s ease; /* Suaviza la animación al pasar el mouse */
+  text-decoration: none;
+}
+
+.sidebar nav ul a li:hover {
+  color: #ffd700; /* Cambiar color al pasar el mouse */
+  transform: scale(1.2); /* Agrandar el texto al 120% */
+}
+
+.sidebar nav ul li:last-child {
+  margin-bottom: 0; /* Elimina el margen inferior del último elemento */
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #f8f4f4; /* Fondo claro */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.header p {
+  font-size: 16px;
+  color: #333;
+}
+
+.form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-row:first-child {
+  margin-top: 20px; /* Añade un espacio adicional desde el borde superior */
+}
+
+.form-row {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 30px;
+}
+
+.password-wrapper .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.edit-button {
+  display: block;
+  width: 120px;
+  margin: 40px auto 30px; /* Espaciado superior e inferior */
+  padding: 10px;
+  background-color: #800000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.edit-button:hover {
+  background-color: #b22222; /* Color más claro al pasar el mouse */
+}
+
+/* Contenedor principal de la cabecera */
+.header {
+  text-align: left;
+  padding: 20px 0;
+}
+
+/* Contenedor del contenido de la cabecera */
+.header-content {
+  display: flex;
+  align-items: center; /* Alinea la imagen y el texto verticalmente */
+  gap: 15px; /* Espaciado entre la imagen y el texto */
+}
+
+/* Estilo de la imagen del icono */
+.header-icon {
+  width: 60px; /* Ajusta el tamaño de la imagen */
+  height: auto;
+}
+
+/* Estilo del texto de la cabecera */
+.header-text h2 {
+  font-size: 30px; /* Tamaño del título */
+  margin: 0; /* Sin margen superior ni inferior */
+  font-weight: bold; /* Texto en negrita */
+  color: #000; /* Color del texto */
+}
+
+.header-text p {
+  font-size: 18px; /* Tamaño del subtítulo */
+  margin: 0; /* Sin margen superior ni inferior */
+  color: #555; /* Color gris para el subtítulo */
+}
+
+/* Línea inferior de la cabecera */
+.header-line {
+  border: none;
+  border-top: 1px solid #000; /* Línea negra */
+  margin-top: 10px;
+}
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  color: #555;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}

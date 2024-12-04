@@ -25,10 +25,13 @@
         </ul>
           <div class="d-flex align-items-center flex-column">
             <div *ngIf="user" class="text-center">
-              <p>{{user.firstName}}</p>
+              <p>{{user.firstName}} {{user.lastName}}</p> 
             </div>
             <a routerLink="/historial-reservas" class="nav-link perfil-icon">
               <img src="iconoperfil.png" alt="Perfil" class="icono-perfil">
+            </a>
+            <a routerLink="/profile" class="nav-link perfil-icon">
+              <h5>Editar perfil</h5>
             </a>
             <a class="nav-link cerrar-sesion" (click)="logout()">
               <h5>CERRAR SESIÓN</h5>

@@ -1,0 +1,226 @@
+/* tarjeta.component.css */
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* Cambiado el color de fondo */
+  padding: 20px;
+  min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del alto */
+  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+}
+
+.progreso {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+  color: #333;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px; /* Agregado para crear espacio */
+}
+
+.paso {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.paso.activo {
+  background-color: #e74c3c;
+  color: #fff;
+  font-weight: bold;
+}
+
+.separador {
+  margin: 0 10px;
+}
+
+.contenedor-pago {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.formulario-pago {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-pago h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.campo {
+  margin-bottom: 15px;
+}
+
+.campo label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.campo.doble {
+  display: flex;
+  justify-content: space-between; /* Espacio uniforme entre los selects */
+  align-items: center; /* Alineación vertical */
+  gap: 10px; /* Espaciado entre los campos */
+}
+
+.campo.doble select {
+  flex: 1; /* Ambos selects ocupan el mismo ancho */
+  max-width: 48%; /* Asegura que no ocupen más del 48% del ancho disponible */
+  padding: 10px;
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  text-align: center; /* Centra el texto dentro de los selects */
+}
+
+.campo-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.campo-check label a {
+  color: #e74c3c;
+  text-decoration: none;
+}
+
+.campo-check label a:hover {
+  text-decoration: underline;
+}
+
+.boton-pagar {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.boton-pagar:hover {
+  background-color: #c0392b;
+}
+
+.resumen {
+  flex: 0.8;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 400px; /* Ajusta el tamaño del resumen */
+  height: auto; /* Ajusta automáticamente según contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye los elementos */
+}
+
+.resumen h3 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.resumen .logo {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  max-width: 100px;
+  margin-bottom: 15px;
+}
+
+.resumen p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.titulo-tarjeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Mantiene los elementos separados */
+  margin-bottom: 20px;
+}
+
+.titulo-tarjeta h2 {
+  font-weight: bold;
+  margin: 0; /* Elimina márgenes del título */
+  font-size: 20px;
+  color: #333;
+}
+
+.logos-tarjeta {
+  display: flex;
+  gap: 10px; /* Espaciado entre los logos */
+}
+
+.logos-tarjeta img {
+  width: 40px; /* Ajusta el tamaño de los logos */
+  height: auto;
+}
+
+.tarjeta-container {
+  background-color: #f5f5f5;
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  min-height: 100vh; /* Asegura que ocupe toda la ventana */
+  display: flex;
+  flex-direction: column;
+}
+
+.icono-progreso {
+  width: 170px; /* Ajusta el tamaño de las imágenes */
+  height: auto; /* Mantén la proporción de las imágenes */
+  display: block; /* Asegura que se comporten como bloques */
+}
+
+.separador {
+  width: 30px; /* Ajusta el tamaño de las imágenes */
+  height: auto; /* Mantén la proporción de las imágenes */
+  display: block; /* Asegura que se comporten como bloques */
+}

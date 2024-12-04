@@ -9,7 +9,7 @@ export interface Habitacion{
 }
 
 export interface Reserva {
-
+  id?: number;
   habitacionId: number;
   clienteId: number;
   dniCliente: string;
@@ -17,6 +17,15 @@ export interface Reserva {
   fechaInicio: string;
   fechaFin: string;
 
+}
+
+
+export interface Empleado {
+  id?: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password?: string;
 }
 export interface User{
   id?: number;

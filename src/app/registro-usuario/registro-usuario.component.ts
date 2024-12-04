@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-
+import { environment } from '../environments/environment';
 @Component({
   selector: 'app-registro-usuario',
   standalone: true, 
@@ -27,13 +27,13 @@ export class RegistroUsuarioComponent {
         password
       };
 
-      this.http.post('http://localhost:8080/api/v1/auth/registerclient', requestBody)
+      this.http.post(`${environment.apiUrl}api/v1/auth/registerclient`, requestBody)
       .subscribe(
         (response: any) => { 
-          console.log('Registro exitoso:', response);
+       
           this.errorMessage = null;
           setTimeout(() => {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/iniciarSesion']);
              }, 1000);
         },
         (error: HttpErrorResponse) => {

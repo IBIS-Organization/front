@@ -22,32 +22,51 @@ import { EditarDatosPersonalComponent } from './editar-datos-personal/editar-dat
 import { ListaHabitacionesComponent } from './lista-habitaciones/lista-habitaciones.component';
 import { AgregarHabitacionComponent } from './agregar-habitacion/agregar-habitacion.component';
 import { EditarHabitacionComponent } from './editar-habitacion/editar-habitacion.component';
-
-
+import { TarjetaComponent } from './tarjeta/tarjeta.component';
+import { RecepcionistaComponent } from './recepcionista/recepcionista.component';
+import { CheckInComponent } from './check-in/check-in.component';
+import { empleadoGuard } from './guards/empleado.guard';
+import { clienteGuard } from './guards/cliente.guard';
+import { adminGuard } from './guards/admin.guard';
+import { ChangePasswordFirstloginComponent } from './change-password-firstlogin/change-password-firstlogin.component';
+import { PendientesComponent } from './pendientes/pendientes.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 export const routes: Routes = [
+  //admin
+  { path: 'listar-personal', component: ListarPersonalComponent, canActivate: [adminGuard]},
+  { path: 'registrar-personal', component: RegistrarPersonalComponent, canActivate: [adminGuard]},
+  { path: 'editar-datos-personal', component: EditarDatosPersonalComponent, canActivate: [adminGuard]},
+  { path: 'lista-habitaciones', component: ListaHabitacionesComponent, canActivate: [adminGuard]},
+  { path: 'agregar-habitacion', component: AgregarHabitacionComponent, canActivate: [adminGuard]},
+  { path: 'editar-habitacion', component: EditarHabitacionComponent, canActivate: [adminGuard]},
+  { path: 'change-password-firstlogin', component: ChangePasswordFirstloginComponent, canActivate: [adminGuard]},
+  //Cliente logueado
+  { path: 'ubicacion-logueado', component: UbicacionLogueadoComponent, canActivate: [clienteGuard]},
+  { path: 'faq-logueado', component: FaqLogueadoComponent, canActivate: [clienteGuard]},
+  { path: 'landing-logueado', component: LandingLogueadoComponent, canActivate: [clienteGuard]},
+  { path: 'historial-reservas', component: HistorialReservasComponent, canActivate: [clienteGuard]},
+  { path: 'detalle-habitacion', component: DetalleHabitacionComponent, canActivate: [clienteGuard]},
+  { path: 'habitaciones-logueado', component: HabitacionesComponent, canActivate: [clienteGuard]},
+  { path: 'reservar/:id', component: DetalleHabitacionComponent, canActivate: [clienteGuard]},
+  { path: 'profile', component: EditProfileComponent, canActivate: [clienteGuard]},
+  
+  //empleado
+  { path:'check-in', component:CheckInComponent, canActivate: [empleadoGuard]},
+  { path: 'recepcionista', component: RecepcionistaComponent , canActivate: [empleadoGuard]},
+  { path: 'pendientes', component: PendientesComponent , canActivate: [empleadoGuard]},
+  { path: 'check-out', component: CheckOutComponent , canActivate: [empleadoGuard]},
+ //Cliente sin iniciar sesion
+
+  { path: 'habitaciones', component: HabitacionesComponent, canActivate: [authenticatedGuard]},
+  { path: 'ubicacion', component: UbicacionComponent, canActivate: [authenticatedGuard]},
+  { path: 'faq', component: FAQComponent, canActivate: [authenticatedGuard]},
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
-  { path: 'iniciarSesion', component: IniciarSesionComponent, canActivate:[authenticatedGuard] },  // Ruta para el componente de iniciar sesión
-  { path: 'recuperar-contrasena', component: RecuperarContrasenaComponent, canActivate:[authenticatedGuard] },  // Ruta para el componente de recuperar contraseña
-  { path: 'registro-usuario', component: RegistroUsuarioComponent, canActivate:[authenticatedGuard] },
-  { path: 'habitaciones', component: HabitacionesComponent, canActivate:[authenticatedGuard] },
-  { path: 'confirmacion-contrasena', component: ConfirmacionContrasenaComponent, canActivate:[authenticatedGuard]},
-  { path: 'ubicacion', component: UbicacionComponent, canActivate:[authenticatedGuard]},
-  { path: 'faq', component: FAQComponent, canActivate:[authenticatedGuard]},
-  { path: 'principal', component: NavComponent, canActivate:[authenticatedGuard]},
-  { path: 'detalle-habitacion', component: DetalleHabitacionComponent, canActivate:[authenticatedGuard]},
-  { path: 'historial-reservas', component: HistorialReservasComponent, canActivate:[authGuard]},
-  { path: 'landing-logueado', component: LandingLogueadoComponent, canActivate:[authGuard]},
-  { path: 'pago-habitacion', component: PagoHabitacionComponent, canActivate:[authGuard]},
-  { path: 'reserva', component: ReservaComponent, canActivate:[authGuard]},
-  { path: 'reservar/:id', component: DetalleHabitacionComponent, canActivate:[authGuard]},
-  { path: 'ubicacion-logueado', component: UbicacionLogueadoComponent, canActivate:[authGuard]},
-  { path: 'faq-logueado', component: FaqLogueadoComponent, canActivate:[authGuard]},
-  { path: 'listar-personal', component: ListarPersonalComponent},
-  { path: 'registrar-personal', component: RegistrarPersonalComponent},
-  { path: 'editar-datos-personal', component: EditarDatosPersonalComponent},
-  { path: 'lista-habitaciones', component: ListaHabitacionesComponent},
-  { path: 'agregar-habitacion', component: AgregarHabitacionComponent},
-  { path: 'editar-habitacion', component: EditarHabitacionComponent},
+  { path: 'iniciarSesion', component: IniciarSesionComponent, canActivate: [authenticatedGuard] }, // Ruta para el componente de iniciar sesión
+  { path: 'recuperar-contrasena', component: RecuperarContrasenaComponent, canActivate: [authenticatedGuard]},  // Ruta para el componente de recuperar contraseña
+  { path: 'registro-usuario', component: RegistroUsuarioComponent, canActivate: [authenticatedGuard]},
+  { path: 'confirmacion-contrasena', component: ConfirmacionContrasenaComponent, canActivate: [authenticatedGuard]},
+  { path: 'principal', component: NavComponent, canActivate: [authenticatedGuard]},
   { path: '**', redirectTo: 'principal'}
 ];
