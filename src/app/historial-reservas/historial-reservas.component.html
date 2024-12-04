@@ -38,33 +38,39 @@
 <!-- Historial de Reservaciones -->
 <section class="historial-reservaciones container my-5">
   <h2 class="titulo-historial text-center">Historial de Reservaciones</h2>
-  <div *ngIf="reservas.length > 0; else noreservas" class="reservacion-item d-flex align-items-center mb-4 p-3">
-    <div *ngFor="let reserva of reservas" class="detalles-reservacion ms-4">
-      <p>
-        Cliente: {{reserva.nombreCliente}}
-      </p>
-      <p>
-        DNI : {{reserva.dniCliente}}
-      </p>
-      <p>Fecha de Ingreso: {{reserva.fechaInicio}}</p>
-      <p>Fecha de Salida: {{reserva.fechaFin}}</p>
-      <div *ngFor="let habitacion of habitaciones">
-        <div *ngIf="habitacion.id === reserva.habitacionId">
+  <div *ngIf="reservas.length > 0; else noreservas">
+    <div *ngFor="let reserva of reservas" class="reservacion-item d-flex align-items-center mb-4 p-3">
+      <div class="detalles-reservacion ms-4">
+        <p>Cliente: {{ reserva.nombreCliente }}</p>
+        <p>DNI: {{ reserva.dniCliente }}</p>
+        <p>Fecha de Ingreso: {{ reserva.fechaInicio }}</p>
+        <p>Fecha de Salida: {{ reserva.fechaFin }}</p>
+
+        <!-- Buscar y mostrar la habitación asociada -->
+        <ng-container *ngIf="getHabitacionPorId(reserva.habitacionId) as habitacion">
           <img [src]="habitacion.img" alt="Habitación" class="img-thumbnail">
-          <h5>{{habitacion.categoria}}</h5>
-          <p>{{habitacion.capacidad}} pers. máx • 17 m² / 182 sq ft</p>
-          <p>Desde S/. {{habitacion.precio}}</p>
+          <h5>{{ habitacion.categoria }}</h5>
+          <p>{{ habitacion.capacidad }} pers. máx • 17 m² / 182 sq ft</p>
+          <p>Desde S/. {{ habitacion.precio }}</p>
+        </ng-container>
+
+        <!-- Botón para imprimir boleta -->
+        <div class="print-button-container">
+          <button class="print-button"  (click)="imprimirBoleta(reserva.id!)">Imprimir Boleta</button>
         </div>
-
-
       </div>
-
     </div>
   </div>
+
   <ng-template #noreservas>
     <p>No tienes reservas anteriores.</p>
   </ng-template>
 </section>
+
+
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

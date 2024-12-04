@@ -4,10 +4,11 @@
     <img src="BLACK_IBIS.png" alt="Hotel Ibis Logo" class="logo" />
     <nav>
       <ul>
-        <li>Principal</li>
-        <li>Perfil</li>
-        <li>Check in</li>
-        <li>Check out</li>
+        <a routerLink="/recepcionista"><li>Perfil</li></a>
+        <a routerLink="/pendientes"><li>Pendientes</li></a>
+        <a routerLink="/check-in"><li>Check in</li></a>
+        <a routerLink="/check-out"><li>Check out</li></a>
+        <a (click)="logout()"><li>Cerrar Sesion</li></a>
       </ul>
     </nav>
   </div>
@@ -23,43 +24,55 @@
         />
         <div class="header-text">
           <h2>LISTA DE SERVICIOS</h2>
-          <p>Habitaciones > Check in</p>
+          <p>Habitaciones > Check-in</p>
         </div>
       </div>
       <hr class="header-line" />
     </div>
 
     <div class="custom-table">
-      <table class="table">
+      <div *ngIf="reservasPendientes.length === 0">
+        <p>No hay check-in pendientes</p>
+
+      </div>
+      <table class="table"  >
         <thead>
           <tr>
             <th>Cliente</th>
             <th>Habitación</th>
-            <th>Hora</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Fecha Check-in</th>
             <th>Acciones</th>
           </tr>
         </thead>
-        <tbody>
-          <tr *ngFor="let cliente of clientes">
-            <td>{{ cliente.nombre }}</td>
-            <td>{{ cliente.habitacion }}</td>
-            <td>{{ cliente.hora }}</td>
+        <tbody *ngFor="let cliente of reservasPendientes">
+          <tr >
+            <td>{{ cliente.nombreCliente }}</td>
             <td>
-              <img
-                src="Listo.png"
-                alt="Check"
-                class="action-icon"
-                (click)="registrarCheckIn(cliente.nombre)"
-              />
-              <img
-                src="https://cdn-icons-png.flaticon.com/256/4226/4226577.png"
-                alt="Edit"
-                class="action-icon"
-                (click)="openEditModal(cliente)"
-              />
+              <span *ngIf="habitacionesMap[cliente.habitacionId]">
+                {{ habitacionesMap[cliente.habitacionId]?.categoria }}
+              </span>
+              <span *ngIf="!habitacionesMap[cliente.habitacionId]">Cargando...</span>
+            </td>
+            <td>{{ cliente.fechaInicio }}</td>
+            <td>{{ cliente.fechaFin }}</td>
+            <td>{{ cliente.fechaCheckIn }}</td>
+            <td>
+              <a href="">
+                <img
+                  src="x.webp"
+                  alt="Check"
+                  class="action-icon"
+                  (click)="registrarCheckOut(cliente.id)"
+                />
+              </a>
             </td>
           </tr>
+          
         </tbody>
+
+       
       </table>
     </div>
   </div>
@@ -73,31 +86,5 @@
   </div>
 
   <!-- Modal para Editar -->
-  <div class="modal" *ngIf="showModalEdit">
-    <div class="modal-content edit-modal">
-      <h3 class="modal-title">Editar Hora</h3>
-      <div class="edit-time">
-        <label for="hora">Hora:</label>
-        <input
-          type="number"
-          id="hora"
-          [(ngModel)]="editHora"
-          min="0"
-          max="23"
-        />
-        <label for="minutos">Minutos:</label>
-        <input
-          type="number"
-          id="minutos"
-          [(ngModel)]="editMinutos"
-          min="0"
-          max="59"
-        />
-      </div>
-      <div class="modal-buttons">
-        <button class="save-edit" (click)="guardarEdicion()">Listo</button>
-        <button class="close-edit" (click)="closeEditModal()">Cerrar</button>
-      </div>
-    </div>
-  </div>
+  
 </div>

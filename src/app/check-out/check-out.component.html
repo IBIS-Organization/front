@@ -1,0 +1,75 @@
+<div class="checkin-container">
+    <!-- Barra lateral -->
+    <div class="sidebar">
+      <img src="BLACK_IBIS.png" alt="Hotel Ibis Logo" class="logo" />
+      <nav>
+        <ul>
+          <a routerLink="/recepcionista"><li>Perfil</li></a>
+          <a routerLink="/pendientes"><li>Pendientes</li></a>
+          <a routerLink="/check-in"><li>Check in</li></a>
+          <a routerLink="/check-out"><li>Check out</li></a>
+          <a (click)="logout()"><li>Cerrar Sesion</li></a>
+        </ul>
+      </nav>
+    </div>
+  
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <div class="header">
+        <div class="header-content">
+          <img
+            src="Cuarto.png"
+            alt="Icono de Lista de Servicios"
+            class="header-icon"
+          />
+          <div class="header-text">
+            <h2>LISTA DE SERVICIOS</h2>
+            <p>Habitaciones > Check out</p>
+          </div>
+        </div>
+        <hr class="header-line" />
+      </div>
+  
+      <div class="custom-table">
+        <div *ngIf="reservasPendientes.length === 0">
+          <p>No hay check-out</p>
+  
+        </div>
+        <table class="table"  >
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Habitación</th>
+              <th>Fecha de Inicio</th>
+              <th>Fecha Fin</th>
+              <th>Fecha Check-out</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let cliente of reservasPendientes">
+            <tr >
+              <td>{{ cliente.nombreCliente }}</td>
+              <td>
+                <span *ngIf="habitacionesMap[cliente.habitacionId]">
+                  {{ habitacionesMap[cliente.habitacionId]?.categoria }}
+                </span>
+                <span *ngIf="!habitacionesMap[cliente.habitacionId]">Cargando...</span>
+              </td>
+              <td>{{ cliente.fechaInicio }}</td>
+              <td>{{ cliente.fechaFin }}</td>
+              <td>{{ cliente.fechaCheckOut }}</td>
+              <td>
+                {{ cliente.estado }}
+              </td>
+            </tr>
+            
+          </tbody>
+  
+         
+        </table>
+      </div>
+    </div>
+
+    
+  </div>
+  

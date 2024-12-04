@@ -8,41 +8,53 @@
   <main class="main-container">
     <nav class="sidebar">
       <ul>
-        <a routerLink="/landing-logueado"><li>Principal</li></a>
+ 
         <li class="active">Personal</li>
         <a routerLink="/lista-habitaciones"><li>Habitaciones</li></a>
+        <a (click)="logout()" >
+          <li>Cerrar Sesion</li>
+        </a>
       </ul>
     </nav>
 
     <section class="content">
       <h1>Lista del Personal</h1>
       <h2>Personal</h2>
+      <div *ngIf="empleados.length === 0">
+        <p>No hay empleados disponibles.</p>
+      </div>
 
-      <table class="personal-table">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Rol</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Francisco Alejandro</td>
-            <td>Garcia Castillo</td>
-            <td>Administrador</td>
-            <td>
-              <button class="action-button edit-button">
-                <a routerLink="/editar-datos-personal"><img src="lapiz.png" alt="Editar" class="icon"></a>
-              </button>
-              <button class="action-button delete-button" (click)="abrirModal('Francisco Alejandro')">
-                <img src="basura.png" alt="Eliminar" class="icon">
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    
+        <table class="personal-table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+       
+          <tbody *ngFor="let empleado of empleados" class="personal-table">
+            <tr>
+              <td>{{empleado.firstName}}</td>
+              <td>{{empleado.lastName}}</td>
+              <td>{{empleado.email}}</td>
+              <td>
+                <button class="action-button edit-button">
+                  <a routerLink="/editar-datos-personal"><img src="lapiz.png" alt="Editar" class="icon"></a>
+                </button>
+                <button class="action-button delete-button" (click)="deleteUser(empleado.id!)">
+                  <img src="basura.png" alt="Eliminar" class="icon">
+                </button>
+              </td>
+            </tr>
+          </tbody>
+       
+        </table>
+
+    
+      
 
       <button class="add-button"><a routerLink="/registrar-personal">Agregar</a></button>
     </section>

@@ -31,7 +31,7 @@ export class HabitacionesComponent implements OnInit{
       this.habitacionservice.filtrarHabitaciones(this.filtro).subscribe(
         (data) => {
           this.habitaciones = data;
-          console.log(data)
+         
         },
         (error) => {
           console.error('error al obtener habitaciones', error);

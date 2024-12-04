@@ -118,7 +118,7 @@ export class LandingLogueadoComponent implements OnInit{
   }
 
   getUserInfo(): void {
-    console.log('Llamando a getUserInfo()...');
+  
     this.Service.getUserInfo().subscribe({
       next: (data) => {
         this.user = data; // Asigna los detalles del usuario

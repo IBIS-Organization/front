@@ -33,16 +33,17 @@
 }
 
 
-.sidebar nav ul li {
+.sidebar nav ul a li {
   text-align: center; /* Centra el texto dentro de cada opción */
   font-size: 18px; /* Tamaño de texto */
   cursor: pointer; /* Aparece como botón clicable */
   color: white; /* Color del texto */
   margin-bottom: 110px; /* Espacio entre las opciones */
   transition: transform 0.3s ease, color 0.3s ease; /* Suaviza la animación al pasar el mouse */
+  text-decoration: none;
 }
 
-.sidebar nav ul li:hover {
+.sidebar nav ul a li:hover {
   color: #ffd700; /* Cambiar color al pasar el mouse */
   transform: scale(1.2); /* Agrandar el texto al 120% */
 }

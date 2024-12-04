@@ -25,7 +25,7 @@ export class IniciarSesionComponent {
     }
 
     this.service.login(this.email, this.password, (token) => {
-      console.log('Token recibido en el callback:', token);
+     
     }).subscribe({
       next: () => this.router.navigate(['/landing-logueado']),
       error: (err) => {

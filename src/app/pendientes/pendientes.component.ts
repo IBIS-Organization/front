@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service/service.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
-import { ServiceService } from '../service/service.service';
+import { Router, RouterLink } from '@angular/router';
+import { ReservaServiceService } from '../service/reserva-service.service';
+import { Habitacion, Reserva } from '../model/models.models';
 import { HotelService } from '../service/hotel.service';
 
 @Component({
-  selector: 'app-check-in',
+  selector: 'app-pendientes',
   standalone: true,
   imports: [CommonModule,FormsModule, RouterLink],
-  templateUrl: './check-in.component.html',
-  styleUrl: './check-in.component.css'
+  templateUrl: './pendientes.component.html',
+  styleUrl: './pendientes.component.css'
 })
-export class CheckInComponent implements OnInit {
+export class PendientesComponent implements OnInit{
+  habitacionId: number = 0;
+  Habitacion: Habitacion = {} as Habitacion;
   showModal: boolean = false; // Controla la visibilidad del modal de Check-in
   showModalEdit: boolean = false; // Controla la visibilidad del modal de edición
   clienteSeleccionado: string = ''; // Almacena el cliente seleccionado
@@ -20,19 +24,21 @@ export class CheckInComponent implements OnInit {
   editMinutos: number = 0; // Almacena los minutos a editar
   reservasPendientes: any[] = [];
   habitacionesMap: { [key: number]: any } = {};
+
   constructor(
     private authService: ServiceService,
-    private hotel: HotelService
-    
+    private hotel : HotelService,
+    private router : Router
   ) {}
-  // Lista de clientes
- 
+
   ngOnInit(): void {
-      this.cargarReservasPendientes();
+    this.cargarReservasPendientes();
   }
+
+
   // Método para registrar el Check-in
-  registrarCheckOut(reservaId: number): void {
-    this.hotel.realizarCheckOut(reservaId).subscribe(
+  registrarCheckIn(reservaId: number): void {
+    this.hotel.realizarCheckIn(reservaId).subscribe(
       (reservaActualizada) => {
         this.showModal = true;
       },
@@ -49,46 +55,9 @@ export class CheckInComponent implements OnInit {
   // Método para cerrar el modal de Check-in
   closeModal() {
     this.showModal = false;
+    this.router.navigate(['/ckeck-in']);
   }
 
-  // Método para abrir el modal de edición
-  openEditModal(cliente: any) {
-  
-    this.clienteSeleccionado = cliente.nombre; // Guarda el nombre del cliente seleccionado
-    const [hora, minutos] = cliente.hora
-      .replace('pm', '') // Elimina "pm" si está presente
-      .split(':') // Divide en hora y minutos
-      .map((x: string) => parseInt(x.trim())); // Convierte a número
-    this.editHora = hora || 0; // Asigna la hora
-    this.editMinutos = minutos || 0; // Asigna los minutos
-    this.showModalEdit = true; // Muestra el modal de edición
-  }
-  
-  // Método para cerrar el modal de edición
-  closeEditModal() {
-    this.showModalEdit = false;
-  }
-
-
-  cargarReservasPendientes(): void {
-    this.hotel.obtenerReservaporEstado('Check-in').subscribe(
-      (reservas) => {
-      
-        this.reservasPendientes = reservas;
-        this.cargarHabitaciones();
-      },
-      (error) => console.error('Error al cargar reservas pendientes', error)
-    );
-  }
-
-  cargarHabitaciones(): void {
-    this.reservasPendientes.forEach((reserva) => {
-      this.ObtenerHabitacion(reserva.habitacionId);
-    });
-  }
-
-
-  
   ObtenerHabitacion(id: number): void {
     if (!this.habitacionesMap[id]) { // Solo llama al backend si no está en el mapa
       this.hotel.obtenerHabitacionesporId(id).subscribe(
@@ -101,5 +70,23 @@ export class CheckInComponent implements OnInit {
   }
   
 
- 
+  
+  
+  cargarReservasPendientes(): void {
+    this.hotel.obtenerReservaporEstado('Pendiente').subscribe(
+      (reservas) => {
+    
+        this.reservasPendientes = reservas;
+        this.cargarHabitaciones();
+      },
+      (error) => console.error('Error al cargar reservas pendientes', error)
+    );
+  }
+  
+  cargarHabitaciones(): void {
+    this.reservasPendientes.forEach((reserva) => {
+      this.ObtenerHabitacion(reserva.habitacionId);
+    });
+  }
+  
 }

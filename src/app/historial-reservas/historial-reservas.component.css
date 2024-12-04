@@ -11,6 +11,27 @@ body {
   margin: auto;
 }
 
+
+.print-button-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.print-button {
+  background-color: #800000;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  background-color: #b22222;
+}
+
+
 .titulo-historial {
   font-size: 2.5rem;
   color: #444;

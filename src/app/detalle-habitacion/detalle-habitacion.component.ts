@@ -48,7 +48,7 @@ export class DetalleHabitacionComponent implements OnInit {
   obtenerClienteId(): void {
     this.Service.getUserInfo().subscribe(
       (user) => {
-        console.log('Usuario obtenido:', user);
+       
         this.clienteId = user.id !== undefined ? user.id : null;
       },
       (error) => {
@@ -127,13 +127,13 @@ export class DetalleHabitacionComponent implements OnInit {
       fechaFin: this.fechaFin,
     };
 
-    console.log('Datos de la reserva:', reserva);
+  
 
     // Realizar la solicitud al servicio de reserva después de mostrar el éxito del pago
     setTimeout(() => {
       this.ReservaService.CrearReserva(reserva, token).subscribe({
         next: (data) => {
-          console.log('Reserva creada exitosamente:', data);
+       
           this.paymentStatus = 'success';
         },
         error: (error) => {
