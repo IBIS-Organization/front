@@ -32,6 +32,7 @@ import { ChangePasswordFirstloginComponent } from './change-password-firstlogin/
 import { PendientesComponent } from './pendientes/pendientes.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { HabitacionesLogueadoComponent } from './habitaciones-logueado/habitaciones-logueado.component';
 
 export const routes: Routes = [
   //admin
@@ -51,7 +52,7 @@ export const routes: Routes = [
   { path: 'habitaciones-logueado', component: HabitacionesComponent, canActivate: [clienteGuard]},
   { path: 'reservar/:id', component: DetalleHabitacionComponent, canActivate: [clienteGuard]},
   { path: 'profile', component: EditProfileComponent, canActivate: [clienteGuard]},
-  { path: 'habitacioneslogueado', component: HabitacionesComponent, canActivate: [clienteGuard]},
+  { path: 'habitacioneslogueado', component: HabitacionesLogueadoComponent, canActivate: [clienteGuard]},
   //empleado
   { path:'check-in', component:CheckInComponent, canActivate: [empleadoGuard]},
   { path: 'recepcionista', component: RecepcionistaComponent , canActivate: [empleadoGuard]},
