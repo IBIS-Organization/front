@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Habitaciones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados */
+        .room-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: scale(1.02);
+        }
+
+        .room-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .room-info {
+            padding: 20px;
+        }
+
+        .room-info h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .room-info p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .room-price {
+            font-size: 1.2rem;
+            color: #e63946;
+            font-weight: bold;
+        }
+
+        .book-now {
+            display: block;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e63946;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .book-now:hover {
+            background-color: #cc2f34;
+        }
+
+        .options-panel {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Sección de Habitaciones -->
+        <div *ngIf="habitaciones.length > 0" class="col-lg-8">
+            <div *ngFor="let habitacion of habitaciones" class="room-card">
+                <div class="room-image">
+                    <img [src] ="habitacion.img" alt="Habitación Matrimonial">
+                </div>
+                <div class="room-info">
+                    <h3>{{habitacion.categoria}}</h3>
+                    <p>{{habitacion.descripcion}}</p>
+                    <p class="room-price">Desde S/{{habitacion.precio}}</p>
+                    <a [routerLink] ="['/reservar',habitacion.id]" class="book-now">Reservar Ahora</a>
+                </div>
+            </div>
+
+        </div>
+<div *ngIf="habitaciones.length === 0">
+  <p>
+    NO HAY LA HABITACION O LAS HABITACIONES DISPONIBLES
+  </p>
+</div>
+        <!-- Panel de Opciones -->
+        <div class="col-lg-4">
+            <div class="options-panel">
+                <h4>Ver otras opciones</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="check-in">Ingreso</label>
+                        <input type="date" class="form-control" id="check-in">
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out">Salida</label>
+                        <input type="date" class="form-control" id="check-out">
+                    </div>
+                    <div class="form-group">
+                        <label for="rooms">¿Cuántas?</label>
+                        <select class="form-control" id="rooms">
+                            <option>1 Habitación</option>
+                            <option>2 Habitaciones</option>
+                            <option>3 Habitaciones</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Huéspedes</label>
+                        <select class="form-control" id="guests">
+                            <option>1 Adulto</option>
+                            <option>2 Adultos</option>
+                            <option>3 Adultos</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-outline-secondary btn-block mt-3">Ver otras opciones</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
