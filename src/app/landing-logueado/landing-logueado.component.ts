@@ -45,7 +45,7 @@ export class LandingLogueadoComponent implements OnInit{
   }
   FiltrarHabitaciones():void{
     if(this.filtro.fechaInicio && this.filtro.fechaFin && this.filtro.capacidad && this.filtro.categoria){
-      this.router.navigate(['/habitaciones'], {
+      this.router.navigate(['/habitacioneslogueado'], {
         queryParams:{
           categoria : this.filtro.categoria,
           capacidad : this.filtro.capacidad,

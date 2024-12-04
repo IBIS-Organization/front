@@ -51,7 +51,7 @@ export const routes: Routes = [
   { path: 'habitaciones-logueado', component: HabitacionesComponent, canActivate: [clienteGuard]},
   { path: 'reservar/:id', component: DetalleHabitacionComponent, canActivate: [clienteGuard]},
   { path: 'profile', component: EditProfileComponent, canActivate: [clienteGuard]},
-  
+  { path: 'habitacioneslogueado', component: HabitacionesComponent, canActivate: [clienteGuard]},
   //empleado
   { path:'check-in', component:CheckInComponent, canActivate: [empleadoGuard]},
   { path: 'recepcionista', component: RecepcionistaComponent , canActivate: [empleadoGuard]},
