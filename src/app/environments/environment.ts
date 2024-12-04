@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:8080/'   // URL base para producción
+    apiUrl: 'https://insoback-inso.up.railway.app/'   // URL base para producción
   };
